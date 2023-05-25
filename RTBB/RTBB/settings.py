@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'rtbb.urls'
+ROOT_URLCONF = 'RTBB.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'rtbb.wsgi.application'
+WSGI_APPLICATION = 'RTBB.wsgi.application'
 
 
 # Database
