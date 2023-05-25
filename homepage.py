@@ -11,27 +11,27 @@ class PageHandler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
 
         if self.path == '/':
-            with open('homepage.html', 'r') as file:
+            with open('pages/homepage.html', 'r') as file:
                 html_content = file.read()
             self.wfile.write(bytes(html_content, 'utf-8'))
         elif self.path == '/about':
-            with open('about.html', 'r') as file:
+            with open('pages/about.html', 'r') as file:
                 html_content = file.read()
             self.wfile.write(bytes(html_content, 'utf-8'))
         elif self.path == '/homepage':
-            with open('homepage.html', 'r') as file:
+            with open('pages/homepage.html', 'r') as file:
                 html_content = file.read()
             self.wfile.write(bytes(html_content, 'utf-8'))
-        elif self.path == '/Crud':
-            with open('Crud.html', 'r') as file:
+        elif self.path == '/crud':
+            with open('pages/crud.html', 'r') as file:
                 html_content = file.read()
             self.wfile.write(bytes(html_content, 'utf-8')) 
         elif self.path == '/impress':
-            with open('impress.html', 'r') as file:
+            with open('pages/impress.html', 'r') as file:
                 html_content = file.read()
             self.wfile.write(bytes(html_content, 'utf-8'))
         elif self.path == '/login':
-            with open('Login.html', 'r') as file:
+            with open('pages/login.html', 'r') as file:
                 html_content = file.read()
             self.wfile.write(bytes(html_content, 'utf-8'))
         else:
