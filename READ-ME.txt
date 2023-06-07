@@ -1,8 +1,12 @@
-Installed Extensions
+Start Application:
+1 - Open CMD
+2 - Navigate to the Project directory
+3 - Execute "python run.py" command
 
+Required Extensions:
 Form Manager - Flask-wtf (pip install flask-wtf)
 ORM für DB - SQLAlchemy (pip install flask-sqlalchemy)
-
+PGDB connector - psycopg2 (pip install psycop2g)
 
 Activate Modules (Create table in DB):
 1 - In CMD, from inside of the Project folder, enter the command: Python.
@@ -10,7 +14,7 @@ Activate Modules (Create table in DB):
 3 - Command: app.app_context.push()
 4 - Command: db.create_all()
 
-Dummie Data for "movies"
+Dummie Data for "movies":
 INSERT INTO movies (title, director, duration, description, added_on)
 VALUES 
   ('The Shawshank Redemption', 'Frank Darabont', 142, 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', '2022-01-01'),
@@ -34,7 +38,7 @@ VALUES
   ('Saving Private Ryan', 'Steven Spielberg', 169, 'Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.', '2022-01-19'),
   ('The Green Mile', 'Frank Darabont', 189, 'The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.', '2022-01-20');
 
-Dummie Data for "login"
+Dummie Data for "login":
 INSERT INTO login (username, password) VALUES
 	('admin', '123'),
 	('speroto', '123')

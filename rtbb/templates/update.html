@@ -1,23 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <div class="d-flex border rounded-4 p-5">
-        <form class="d-flex flex-column justify-content-center align-items-center" method="POST" action="{{ url_for('update', movie_id=movie.id) }}">
+    <div class="d-flex justify-content-center">
+        <form class="d-flex flex-column align-items-center border rounded-4 p-5" method="POST" action="{{ url_for('update', movie_id=movie.id) }}">
             {{ update_form.hidden_tag() }}
 
-            {{ update_form.title.label(class="form-label mt-2") }}
+            {{ update_form.title.label(class="form-label") }}
             {{ update_form.title(class="form-control") }}
 
-            {{ update_form.director.label(class="form-label mt-2") }}
+            {{ update_form.director.label(class="form-label mt-3") }}
             {{ update_form.director(class="form-control") }}
 
-            {{ update_form.duration.label(class="form-label mt-2") }}
+            {{ update_form.duration.label(class="form-label mt-3") }}
             {{ update_form.duration(class="form-control") }}
 
-            {{ update_form.description.label(class="form-label mt-2") }}
+            {{ update_form.description.label(class="form-label mt-3") }}
             {{ update_form.description(class="form-control") }}
 
-            {{ update_form.updateSubmit(class="btn btn-primary") }}
+            {{ update_form.updateSubmit(class="btn btn-primary mt-4") }}
         </form>
     </div>
 
