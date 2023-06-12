@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container">
+        <form method="POST" action="">
+            <!-- CSRF Token - Du kannst das einfach ignorieren -->
+            {{ form.hidden_tag() }}
+
+            <!-- Login Tags hier. Du kannst Classnamen in die Klammer rein machen -->
+            {{ form.username.label(class="") }} <!-- Das ist das gleich als <label>Username</label> -->
+            {{ form.username (class="")}} <!-- Das ist das gleich als <input type="Text"> -->
+
+            {{ form.password.label(class="")}}
+            {{ form.password(class="")}}
+            
+            {{ form.loginSubmit }}
+
+        </form>        
+    </div>
+
+{% endblock %}
