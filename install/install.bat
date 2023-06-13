@@ -10,6 +10,6 @@ Python
 
 from rtbb import app, db
 
-Command: app.app_context.push()
+app.app_context.push()
 
-Command: db.create_all()
+db.create_all()
