@@ -1,0 +1,28 @@
+Dummie Data for "movies"
+INSERT INTO movies (title, director, duration, description, added_on)
+VALUES 
+  ('The Shawshank Redemption', 'Frank Darabont', 142, 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', '2022-01-01'),
+  ('The Godfather', 'Francis Ford Coppola', 175, 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.', '2022-01-02'),
+  ('Pulp Fiction', 'Quentin Tarantino', 154, 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.', '2022-01-03'),
+  ('The Dark Knight', 'Christopher Nolan', 152, 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.', '2022-01-04'),
+  ('Fight Club', 'David Fincher', 139, 'An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.', '2022-01-05'),
+  ('Forrest Gump', 'Robert Zemeckis', 142, 'The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold through the perspective of an Alabama man with an IQ of 75.', '2022-01-06'),
+  ('Inception', 'Christopher Nolan', 148, 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.', '2022-01-07'),
+  ('The Matrix', 'Lana Wachowski', 136, 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.', '2022-01-08'),
+  ('The Lord of the Rings: The Fellowship of the Ring', 'Peter Jackson', 178, 'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.', '2022-01-09'),
+  ('The Avengers', 'Joss Whedon', 143, 'Earths mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.', '2022-01-10'),
+  ('Interstellar', 'Christopher Nolan', 169, 'A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival.', '2022-01-11'),
+  ('The Lion King', 'Roger Allers', 88, 'Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.', '2022-01-12'),
+  ('Schindlers List', 'Steven Spielberg', 195, 'In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.', '2022-01-13'),
+  ('The Departed', 'Martin Scorsese', 151, 'An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.', '2022-01-14'),
+  ('The Silence of the Lambs', 'Jonathan Demme', 118, 'A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.', '2022-01-15'),
+  ('Gladiator', 'Ridley Scott', 155, 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.', '2022-01-16'),
+  ('The Dark Knight Rises', 'Christopher Nolan', 165, 'Eight years after the Jokers reign of anarchy, Batman, with the help of the enigmatic Catwoman, is forced from his exile to save Gotham City from the brutal guerrilla terrorist Bane.', '2022-01-17'),
+  ('The Prestige', 'Christopher Nolan', 130, 'After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.', '2022-01-18'),
+  ('Saving Private Ryan', 'Steven Spielberg', 169, 'Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.', '2022-01-19'),
+  ('The Green Mile', 'Frank Darabont', 189, 'The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.', '2022-01-20');
+
+Dummie Data for "login"
+INSERT INTO login (username, password) VALUES
+	('admin', '123'),
+	('speroto', '123')
