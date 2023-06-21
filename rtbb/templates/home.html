@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
-
 <div class="container">
+  <hr>
 <div onclick class="row">
   <div class="col m-5">
-    <a href="{{ url_for('releasedate') }}">
+    <a class="card-text" href="{{ url_for('runtime') }}">
       <div class="card shadow-sm">
         <img src= "{{ url_for('static',filename='release.png') }}" alt="test" width="100%" height="100%" class="card-img-top" width="100px" height="250px" ></img>
         <div class="card-body">
-          <a class="card-text">"Release Date Riddles" a game mode that challenges your movie knowledge by guessing the release dates. Test your intuition and determine when each movie was released. Use clues and hints to refine your predictions, earn points, and climb the leaderboard. Show off your film expertise and enjoy the thrill of deciphering release dates!</a>
-
+          <p class="card-text">"Release Date Riddles" a game mode that challenges your movie knowledge by guessing the release dates. Test your intuition and determine when each movie was released. Use clues and hints to refine your predictions, earn points, and climb the leaderboard. Show off your film expertise and enjoy the thrill of deciphering release dates!</p>
+            <hr>
           <div class="d-flex justify-content-between align-items-center">
-            <small class="text-body-secondary">Highscore: 134</small>
+            <strong class="text-body-secondary">Highscore: 134</strong>
           </div>
         </div>
       </div>
@@ -21,14 +21,16 @@
 
   <div class="col m-5">
     <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='layout.css') }}">
-    <a href="{{ url_for('runtime') }}">
+    <a class="card-text" href="{{ url_for('runtime') }}">
       <div class="card shadow-sm">
         <img src= "{{ url_for('static',filename='runtime.png') }}" alt="test" width="100%" height="100%" class="card-img-top" width="100px" height="250px" ></img>
         <div class="card-body">
-          <a class="card-text">"Guess the duration" is a captivating game mode that combines entertainment, knowledge, and strategy. It's time to showcase your cinematic expertise and take your place among the film connoisseurs. Get ready to immerse yourself in the enchanting world of movies and let the guessing begin!</a>
+          <p class="card-text">"Guess the duration" is a captivating game mode that combines entertainment, knowledge, and strategy. It's time to showcase your cinematic expertise and take your place among the film connoisseurs. Get ready to immerse yourself in the enchanting world of movies and let the guessing begin!</p>
           
+          <hr>
+
           <div class="d-flex justify-content-between align-items-center">
-            <small class="text-body-secondary">Highscore: 467</small>
+            <strong class="text-body-secondary">Highscore: 467</strong>
           </div>
         </div>
       </div>
@@ -44,14 +46,14 @@
 
 
 <div class="row m-auto" style="width: 50%; height: 100%">
-  <a class="card-text" href="{{ url_for('runtime') }}">
+  <a class="card-text" href="{{ url_for('discord') }}">
     <div class="card shadow-sm">
       <img src= "{{ url_for('static',filename='new.jpg') }}" alt="test" width="100%" height="100%" class="card-img-top" width="100px" height="200px" ></img>
       <div class="card-body">
         <strong>Currently working on Bigger and Better game Modes for you </strong>
         <hr>
-        <p class="card-text">Join our Discord of you want to see new updates</p><div class="d-flex justify-content-between align-items-center">
-          <small class="text-body-secondary">Discord</small>
+        <p>Join our Discord of you want to see new updates</p><div class="d-flex justify-content-between align-items-center">
+          <strong class="text-body-secondary"><u>Discord</strong>
         </div>
       </div>
     </div>
