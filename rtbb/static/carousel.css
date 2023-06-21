@@ -3,6 +3,16 @@
   position: static;
   }
 
+ .carousel-indicators button {
+  height: 10px !important;
+  width: 40px !important;
+  margin: 0 10px !important;
+  border: none;
+  background-color: #bcfbcd !important;
+  cursor: pointer;
+}
+  
+
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon{
@@ -11,6 +21,7 @@
   transform: scaleX(1.5);
   background-size: 100% 100%;
   filter: invert(100%);
+  cursor: pointer;
   }
 .carousel-control-prev,
 .carousel-control-next{
@@ -18,4 +29,5 @@
   align-items: center;
   justify-content: center;
   height: 700px; /* Adjust this value as needed */
+  cursor: pointer;
   }
