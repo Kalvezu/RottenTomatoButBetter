@@ -43,7 +43,7 @@
   <hr>
 </div>
 
-
+<link rel="stylesheet" href="layout.css">
 
 <div class="row m-auto" style="width: 50%; height: 100%">
   <a class="card-text" href="{{ url_for('discord') }}">
@@ -61,7 +61,40 @@
 </div>
 
 
-
+<div class="row m-auto" style="width: 60%; height: 100%">
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src= "{{ url_for('static',filename='image1.jpg') }}" alt="test" width="50%" height="50%" class="card-img-top" width="100px" height="200px" ></img>
+    </div>
+    <div class="carousel-item">
+      <img src= "{{ url_for('static',filename='image2.jpg') }}" alt="test" width="50%" height="50%" class="card-img-top" width="100px" height="200px" ></img>
+    </div>
+    <div class="carousel-item">
+      <img src= "{{ url_for('static',filename='image3.jpg') }}" alt="test" width="50%" height="50%" class="card-img-top" width="100px" height="200px" ></img>
+    <h1>Unter Beobachtung</h1>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" style="background-color:black; color:green"data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" style="background-color:black; color:green"  data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" fill="black" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+
+<br>
+<br><br><br><br><br><br>
+</div>
+
+
+
 
 {% endblock %}
