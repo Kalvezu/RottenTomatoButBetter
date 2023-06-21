@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
-<link href="carousel.css" rel="stylesheet">
+
 <div class="container">
   <hr>
 <div onclick class="row">
   <div class="col m-5">
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='layout.css') }}">
     <a class="card-text" href="{{ url_for('runtime') }}">
       <div class="card shadow-sm">
         <img src= "{{ url_for('static',filename='release.png') }}" alt="test" width="100%" height="100%" class="card-img-top" width="100px" height="250px" ></img>
@@ -27,9 +28,7 @@
         <img src= "{{ url_for('static',filename='runtime.png') }}" alt="test" width="100%" height="100%" class="card-img-top" width="100px" height="250px" ></img>
         <div class="card-body">
           <p class="card-text">"Guess the duration" is a captivating game mode that combines entertainment, knowledge, and strategy. It's time to showcase your cinematic expertise and take your place among the film connoisseurs. Get ready to immerse yourself in the enchanting world of movies and let the guessing begin!</p>
-          
-          <hr>
-
+          <hr> 
           <div class="d-flex justify-content-between align-items-center">
             <strong class="text-body-secondary">Highscore: 467</strong>
           </div>
@@ -61,36 +60,46 @@
   </a>
 </div>
 
-
-
-<div class="row m-auto" style="width: 60%; height: 100%">
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src= "{{ url_for('static',filename='image1.jpg') }}" alt="test" width="50%" height="50%" class="card-img-top" width="100px" height="200px" ></img>
-    </div>
-    <div class="carousel-item">
-      <img src= "{{ url_for('static',filename='image2.jpg') }}" alt="test" width="50%" height="50%" class="card-img-top" width="100px" height="200px" ></img>
-    </div>
-    <div class="carousel-item">
-      <img src= "{{ url_for('static',filename='image3.jpg') }}" alt="test" width="50%" height="50%" class="card-img-top" width="100px" height="200px" ></img>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-    <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button"  data-bs-target="#myCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+<div>
+  <hr>
+  
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 </div>
 
+
+<link rel="stylesheet" href="static/carousel.css">
+
+<div class="row m-auto" style="width: 80%; height: 100%">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='image1.jpg') }}" alt="test" width="50%" height="50%" class="card-img-top" width="100px" height="200px">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='image2.jpg') }}" alt="test" width="50%" height="50%" class="card-img-top" width="100px" height="200px">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='image3.jpg') }}" alt="test" width="50%" height="50%" class="card-img-top" width="100px" height="200px">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" style="background-color:rgba(255, 255, 255, 0.8); fill: 100%" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <i class="carousel-control-prev-icon" aria-hidden="true"></i>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" style="background-color:rgba(255, 255, 255, 0.8); fill: 100%" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+</div>
 </div>
 
 <br><br><br><br><br><br><br>
