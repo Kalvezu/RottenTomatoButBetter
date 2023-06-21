@@ -1,6 +1,43 @@
 {% extends "layout.html" %}
 {% block content %}
 
+<div class="container">
+<div onclick class="row">
+  <div class="col m-5">
+    <a href="{{ url_for('releasedate') }}">
+      <div class="card shadow-sm">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Release" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy="2em">Release</text></svg>
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-body-secondary">Runtime HigherLower</small>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+  <div class="col m-5">
+    <a href="{{ url_for('runtime') }}">
+      <div class="card shadow-sm">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Runtime" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy="2em" scale = "500%">Runtime</text></svg>
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-body-secondary">Runtime HigherLower</small>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+</div>
+
+</div>
+
+
     <p>Marlon und Benis</p>
 
 {% endblock %}

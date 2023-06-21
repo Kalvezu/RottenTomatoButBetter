@@ -31,6 +31,15 @@ def quellen():
 def impressum():
     return render_template('impressum.html')
 
+@app.route('/runtime')
+def runtime():
+    return render_template('runtime.html')
+
+@app.route('/releasedate')
+def releasedate():
+    return render_template('releasedate.html')
+
+
 # Config for CRUD
 @app.route('/update/<int:movie_id>', methods=['GET', 'POST'])
 def update(movie_id):
@@ -84,3 +93,6 @@ def delete_movie(movie_id):
         db.session.commit()
         flash('Movie deleted successfully!', 'success')
         return redirect(url_for('crud'))
+
+
+    
