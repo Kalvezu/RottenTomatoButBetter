@@ -1,6 +1,6 @@
 from rtbb import app, db
 from flask import render_template, flash, redirect, url_for, request
-from rtbb.forms import LoginForm, movieForm, deleteMovie, updateForm
+from rtbb.forms import LoginForm, movieForm, deleteMovie, updateForm, registerForm
 from rtbb.models import Login, Movies
 
 @app.route('/') 
@@ -22,6 +22,12 @@ def login():
             flash('Failed to login', 'danger')
 
     return render_template('login.html', form=form)
+
+@app.route('/register')
+def register():
+    form = registerForm()
+
+    return render_template('register.html', form=form)
 
 @app.route('/quellen')
 def quellen():

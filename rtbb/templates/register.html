@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="d-flex justify-content-center bg-light pt-5 vh-100">
+        <div>
+            <form class="d-flex flex-column align-items-center border rounded-4 p-5 bg-white">
+                
+                {{ form.hidden_tag() }}
+
+                <div class="d-flex flex-column justify-content-center align-items-center border-bottom pb-4 w-100">
+                    <h1>Create Account</h1>
+                </div>
+
+                {{ form.email (class="form-control mt-5")}}
+                {{ form.username (class="form-control mt-3")}}
+                {{ form.password(class="form-control mt-3")}}
+                {{ form.confirmPassword(class="form-control mt-3")}}
+                
+                {{ form.loginSubmit(class="btn btn-primary mt-5") }}
+
+                <small class="mt-5 crazyBtn" >
+                    <a class="text-decoration-none text-black" href="{{ url_for('login') }}">Sign In</a>
+                </small>
+                
+            </form> 
+        </div>       
+    </div>
+
+{% endblock %}

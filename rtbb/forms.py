@@ -1,10 +1,17 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, IntegerField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, IntegerField, TextAreaField, EmailField
 from wtforms.validators import DataRequired
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    username = StringField('Username', validators=[DataRequired()], render_kw={"placeholder": "Username"})
+    password = PasswordField('Password', validators=[DataRequired()], render_kw={"placeholder": "Password"})
+    loginSubmit = SubmitField('Login')
+
+class registerForm(FlaskForm):
+    email = EmailField('E-Mail', validators=[DataRequired()], render_kw={"placeholder": "E-Mail"})
+    username = StringField('Username', validators=[DataRequired()], render_kw={"placeholder": "Username"})
+    password = PasswordField('Password', validators=[DataRequired()], render_kw={"placeholder": "Password"})
+    confirmPassword = PasswordField('Confirm Password', validators=[DataRequired()], render_kw={"placeholder": "Confirm Password"})
     loginSubmit = SubmitField('Login')
 
 class movieForm(FlaskForm):
