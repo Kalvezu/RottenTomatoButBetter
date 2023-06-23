@@ -31,6 +31,41 @@ def quellen():
 def impressum():
     return render_template('impressum.html')
 
+@app.route('/runtime')
+def runtime():
+    return render_template('runtime.html')
+
+@app.route('/releasedate')
+def releasedate():
+    return render_template('releasedate.html')
+
+
+
+@app.route('/discord')
+def discord():
+    return render_template('fakes/discord.html')
+
+@app.route('/twitter')
+def twitter():
+    return render_template('fakes/twitter.html')
+
+@app.route('/facebook')
+def facebook():
+    return render_template('fakes/facebook.html')
+
+@app.route('/linkedin')
+def linkedin():
+    return render_template('fakes/linkedin.html')
+
+@app.route('/youtube')
+def youtube():
+    return render_template('fakes/youtube.html')
+
+@app.route('/instagram')
+def instagram():
+    return render_template('fakes/instagram.html')
+
+
 # Config for CRUD
 @app.route('/update/<int:movie_id>', methods=['GET', 'POST'])
 def update(movie_id):
@@ -84,3 +119,6 @@ def delete_movie(movie_id):
         db.session.commit()
         flash('Movie deleted successfully!', 'success')
         return redirect(url_for('crud'))
+
+
+    
