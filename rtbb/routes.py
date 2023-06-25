@@ -1,11 +1,26 @@
-from rtbb import app, db
-from flask import render_template, flash, redirect, url_for, request
-from rtbb.forms import LoginForm, movieForm, deleteMovie, updateForm, registerForm
+from rtbb import app, db, get_locale
+from flask import render_template, flash, redirect, url_for, request, session
+from werkzeug.security import generate_password_hash, check_password_hash
+from rtbb.forms import LoginForm, movieForm, deleteMovie, updateForm, registerForm, forgotPasswordForm
+from flask_login import login_user, LoginManager, login_required, logout_user
 from rtbb.models import Login, Movies
+from flask_babel import gettext
 
-@app.route('/') 
-def home():
-    return render_template('home.html')
+
+#Config für Login/Register/Forgot Password/Auth
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "login"
+
+@login_manager.user_loader
+def load_user(id):
+    return Login.query.get(int(id))
+
+@app.context_processor
+def inject_dark_mode():
+    def get_dark_mode():
+        return session.get('dark_mode', False)
+    return {'dark_mode': get_dark_mode()}
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -13,32 +28,97 @@ def login():
     if form.validate_on_submit():
         username = form.username.data
         password = form.password.data
-    
+
         user = Login.query.filter_by(username=username).first()
         
-        if user and user.password == password:
+        if user and check_password_hash(user.password, password):
+            login_user(user)
             return redirect(url_for('home'))
         else:
-            flash('Failed to login', 'danger')
+            flash(gettext('Failed to login'), 'danger')
 
     return render_template('login.html', form=form)
 
-@app.route('/register')
-def register():
-    form = registerForm()
+@app.route('/logout', methods=['GET', 'POST'])
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
-    return render_template('register.html', form=form)
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    register = registerForm()
+    login = Login.query.all()
+
+    if register.validate_on_submit():
+        login = Login(
+            username=register.username.data,
+            password=generate_password_hash(register.password.data),
+            email=register.email.data,
+        )
+        db.session.add(login)
+        db.session.commit()
+
+        flash(gettext('User created successfully!'), 'success')
+        return redirect(url_for('login'))
+
+    return render_template('register.html', form=register)
+
+@app.route('/forgotPassword', methods=['GET', 'POST'])
+def forgotPassword():
+    form = forgotPasswordForm()
+
+    if form.validate_on_submit():
+        email = form.email.data
+        new_password = form.password.data
+        confirm_password = form.confirmPassword.data
+
+        user = Login.query.filter_by(email=email).first()
+
+        if user and new_password == confirm_password: 
+            user.password = generate_password_hash(form.password.data)
+            db.session.commit()
+
+            return redirect(url_for('login'))
+        else:
+            flash(gettext('Failed to update password'), 'danger')        
+
+    return render_template('forgotPassword.html', form=form)
+
+#Sonstigens
+@app.route('/') 
+@login_required
+def home():
+    current_language = get_locale()
+    languages = app.config['LANGUAGES']
+    return render_template('home.html', languages=languages, current_language=current_language)
 
 @app.route('/quellen')
+@login_required
 def quellen():
     return render_template('quellen.html')
 
 @app.route('/impressum')
+@login_required
 def impressum():
     return render_template('impressum.html')
 
+@app.route('/toggle_dark_mode')
+def toggle_dark_mode():
+    if 'dark_mode' in session:
+        session.pop('dark_mode')
+    else:
+        session['dark_mode'] = True
+    return redirect(request.referrer or url_for('home'))
+
+@app.route('/set_language/<lang_code>')
+def set_language(lang_code):
+    session['language'] = lang_code
+    return redirect(request.referrer or url_for('home'))
+
 # Config for CRUD
 @app.route('/update/<int:movie_id>', methods=['GET', 'POST'])
+@login_required
 def update(movie_id):
     movie = Movies.query.get_or_404(movie_id)
     update_form = updateForm(obj=movie)
@@ -50,12 +130,13 @@ def update(movie_id):
         movie.description = update_form.description.data
         db.session.commit()
 
-        flash('Movie updated successfully!', 'success')
+        flash(gettext('Movie updated successfully!'), 'success')
         return redirect(url_for('crud'))
     
     return render_template('update.html', update_form=update_form, movie=movie)
 
 @app.route('/crud', methods=['GET', 'POST'])
+@login_required
 def crud():
     addMovies = movieForm()
     delete = deleteMovie()
@@ -71,7 +152,7 @@ def crud():
         db.session.add(movie)
         db.session.commit()
 
-        flash('Movie added successfully!', 'success')
+        flash(gettext('Movie added successfully!'), 'success')
         return redirect(url_for('home'))
 
     if delete.validate_on_submit():
@@ -81,6 +162,7 @@ def crud():
     return render_template('crud.html', addMovies=addMovies, delete=delete, movies=movies)
 
 @app.route('/delete/<int:movie_id>', methods=['POST'])
+@login_required
 def delete_movie(movie_id):
     delete = deleteMovie()
 
@@ -88,5 +170,5 @@ def delete_movie(movie_id):
         movie = Movies.query.get_or_404(movie_id)
         db.session.delete(movie)
         db.session.commit()
-        flash('Movie deleted successfully!', 'success')
+        flash(gettext('Movie deleted successfully!'), 'success')
         return redirect(url_for('crud'))

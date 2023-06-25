@@ -1,11 +1,13 @@
 from rtbb import db
 from datetime import datetime
+from flask_login import UserMixin
 
-class Login(db.Model):
+class Login(db.Model, UserMixin):
     __tablename__ = 'login'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
+    password = db.Column(db.String(320), nullable=False)
+    email = db.Column(db.String(320), nullable=False, unique=True)
 
 class Movies(db.Model):
     id = db.Column(db.Integer, primary_key=True)

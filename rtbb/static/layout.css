@@ -25,18 +25,82 @@ time, mark, audio, video {
     --b: 0.2em;   
     --c: #000000;
     
-    color: #0000;
+    color: #ffffff;
     padding-block: var(--b);
     background: 
       linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
       linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
     -webkit-background-clip: text,padding-box;
-            background-clip: text,padding-box;
+    background-clip: text,padding-box;
     transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
   }
   .crazyBtn:hover {
     --_p: 100%;
     --_s: .3s;
-    
 }
-    
+
+/* Nav Styles */
+.navSizing {
+  height: 5rem ;
+}
+
+.menuOption:hover{
+  background-color: var(--layer3-color);
+  color: var(--layer8-color);
+  text-shadow: 1px .1px 2px var(--layer0-color);
+}
+
+/* CRUD Styles */
+.btnRemoveStyle{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.crudBtn{
+  padding: .6rem;
+  text-decoration: none;
+  border: black 0px 0px;
+  border-radius: 10%;
+}
+
+.noWarpCrud{
+  white-space: nowrap;
+}
+
+/* Dark Mode Styles */
+.layer0 {background-color: var(--layer0-color)}
+.layer1 {background-color: var(--layer1-color)}
+.layer2 {background-color: var(--layer2-color)}
+.layer3 {background-color: var(--layer3-color)}
+.layer4 {background-color: var(--layer4-color)}
+.layer5 {background-color: var(--layer5-color)}
+.layer6 {background-color: var(--layer6-color)}
+.layer7 {background-color: var(--layer7-color)}
+.layer8 {background-color: var(--layer8-color)}
+
+.fontDM{
+    color: #F7F7F7;
+    text-shadow: 1px .1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.borderControll{
+    border: none;
+    box-shadow:  0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3) ;
+}
+
+.dark-mode {
+  --layer0-color: #222222;
+  --layer1-color: #3B3B3B;
+  --layer2-color: #515151;
+  --layer3-color: #626262;
+  --layer4-color: #7E7E7E;
+  --layer5-color: #9E9E9E;
+  --layer6-color: #B1B1B1;
+  --layer7-color: #CFCFCF;
+  --layer8-color: #E1E1E1;
+}

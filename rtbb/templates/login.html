@@ -1,28 +1,32 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <div class="d-flex justify-content-center bg-light pt-5 vh-100">
-        <div>
-            <form method="POST" action="" class="d-flex flex-column align-items-center border rounded-4 p-5 bg-white">
+    <div class="d-flex justify-content-center pt-5 vh-100 {% if dark_mode %}dark-mode layer0{% else %}bg-light{% endif %}">
+        <div class="w-25">
+
+            <form method="POST" action="" class="d-flex flex-column align-items-center borderControll rounded-4 p-5 {% if dark_mode %}dark-mode layer2 font9{% else %}bg-white{% endif %}">
                 
                 {{ form.hidden_tag() }}
 
                 <div class="d-flex flex-column justify-content-center align-items-center border-bottom pb-4 w-100">
-                    <h1>Login</h1>
+                    <h1 class="{% if dark_mode %}dark-mode fontDM{% endif %}">{{ _('loginTitle') }}</h1>
                 </div>
 
-                {{ form.username (class="form-control mt-5")}}
+                {{ form.username (class="form-control mt-5 w-75 borderControll " + ("layer7" if dark_mode else ""))}}
 
-                {{ form.password(class="form-control mt-4")}}
+                {{ form.password(class="form-control mt-4 w-75 borderControll " + ("layer7" if dark_mode else ""))}}
 
-                <small class="mt-1 ms-auto">
-                    <a class="text-decoration-none text-black text-body-tertiary" href="">Forgot your Password?</a> 
+                <small class="mt-3 ms-auto me-5">
+                    <a  class="text-decoration-none {% if dark_mode %}dark-mode fontDM{% else %}text-body-tertiary{% endif %}" 
+                        href="{{ url_for('forgotPassword') }}"> {{ _('forgotPassword') }}</a> 
                 </small>
 
-                {{ form.loginSubmit(class="btn btn-primary mt-5") }}
+                {{ form.loginSubmit(class="btn borderControll fw-bold mt-5 pt-2 pb-2 ps-5 pe-5 " + ("btn-primary" if dark_mode else "btn-primary")) }}
+
    
-                <small class="mt-5 crazyBtn" >
-                    <a class="text-decoration-none text-black" href="{{ url_for('register') }}">Create Account</a>
+                <small class="d-flex mt-5 justify-content-around align-items-center" >
+                    <p class="me-2 {% if dark_mode %}dark-mode fontDM{% endif %}">{{ _('noAcc') }}</p>
+                    <a class="text-decoration-none crazyBtn {% if dark_mode %}dark-mode fontDM{% else %}text-black{% endif %}" href="{{ url_for('register') }}">{{ _('createAcc') }}</a>
                 </small>
                 
             </form> 
