@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-26 00:14+0200\n"
+"POT-Creation-Date: 2023-06-29 23:02+0200\n"
 "PO-Revision-Date: 2023-06-24 19:10+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -104,49 +104,59 @@ msgstr "Edit"
 msgid "Delete"
 msgstr "Delete"
 
-#: routes.py:37
+#: routes.py:38
 msgid "Failed to login"
 msgstr "Failed to login"
 
-#: routes.py:61
+#: routes.py:62
 msgid "User created successfully!"
 msgstr "User created successfully!"
 
-#: routes.py:83
+#: routes.py:84
 msgid "Failed to update password"
 msgstr "Failed to update password!"
 
-#: routes.py:131
+#: routes.py:133
 msgid "Movie updated successfully!"
 msgstr "Movie updated successfully!"
 
-#: routes.py:153
+#: routes.py:155
 msgid "Movie added successfully!"
 msgstr "Movie added successfully!"
 
-#: routes.py:171
+#: routes.py:173
 msgid "Movie deleted successfully!"
 msgstr "Movie deleted successfully!"
 
-#: templates/crud.html:9
+#: templates/crud.html:6
+#, fuzzy
+msgid "crudTitel"
+msgstr "Update Movie"
+
+#: templates/crud.html:13
 msgid "addMovie"
 msgstr "Add movie"
 
-#: templates/crud.html:16
+#: templates/crud.html:21
 msgid "movieTitle"
 msgstr "Title"
 
-#: templates/crud.html:17
+#: templates/crud.html:22
 msgid "movieDirector"
 msgstr "Director"
 
-#: templates/crud.html:18
+#: templates/crud.html:23
 msgid "movieDuration"
 msgstr "Duration"
 
-#: templates/crud.html:19
+#: templates/crud.html:24
 msgid "movieDescription"
 msgstr "Description"
+
+#: templates/crud.html:25
+#, fuzzy
+msgid "action"
+msgstr "Duration"
 
 #: templates/forgotPassword.html:11
 msgid "forgotPassowdTitle"
@@ -163,6 +173,163 @@ msgstr "Sign in"
 #: templates/home.html:4
 msgid "welcome"
 msgstr ""
+
+#: templates/impressum.html:6 templates/layout.html:40
+msgid "about"
+msgstr "About"
+
+#: templates/impressum.html:9
+msgid "infoDetails"
+msgstr "Information according to § 5 TMG:"
+
+#: templates/impressum.html:11 templates/impressum.html:47
+#, fuzzy
+msgid "firma"
+msgstr "Company:"
+
+#: templates/impressum.html:12 templates/impressum.html:48
+msgid "address"
+msgstr "Address:"
+
+#: templates/impressum.html:13 templates/impressum.html:49
+msgid "place"
+msgstr "Zip Code:"
+
+#: templates/impressum.html:14 templates/impressum.html:50
+msgid "country"
+msgstr "Country:"
+
+#: templates/impressum.html:14 templates/impressum.html:50
+msgid "germany"
+msgstr "Germany"
+
+#: templates/impressum.html:18
+msgid "contact"
+msgstr "Contact:"
+
+#: templates/impressum.html:20
+#, fuzzy
+msgid "phone"
+msgstr "Phone:"
+
+#: templates/impressum.html:21
+#, fuzzy
+msgid "email"
+msgstr "Email:"
+
+#: templates/impressum.html:25
+#, fuzzy
+msgid "representativeWith"
+msgstr "Represented by"
+
+#: templates/impressum.html:27
+#, fuzzy
+msgid "representativeName"
+msgstr "Representative's name:"
+
+#: templates/impressum.html:28
+#, fuzzy
+msgid "representativePosition"
+msgstr "Position in the company:"
+
+#: templates/impressum.html:28
+#, fuzzy
+msgid "representativePositionName"
+msgstr "Communications Representative"
+
+#: templates/impressum.html:32
+msgid "registerAndRegisterNumber"
+msgstr "Register and Registration Number:"
+
+#: templates/impressum.html:34
+#, fuzzy
+msgid "register"
+msgstr "Register:"
+
+#: templates/impressum.html:35
+#, fuzzy
+msgid "registerNumber"
+msgstr "Registration Number:"
+
+#: templates/impressum.html:39
+msgid "taxesID"
+msgstr "Registration ID"
+
+#: templates/impressum.html:41
+msgid "TaxesIDnummer"
+msgstr "Registration Number:"
+
+#: templates/impressum.html:45
+msgid "contentResposible"
+msgstr "Responsible for the content according to § 55 Abs. 2 RStV:"
+
+#: templates/impressum.html:54
+msgid "disclaimer"
+msgstr "Disclaimer"
+
+#: templates/impressum.html:55
+msgid "disclaimerText"
+msgstr ""
+"The content of this website/web app is for informational purposes only. "
+"We do not assume no guarantee for the topicality, correctness, "
+"completeness or quality of the information provided. Any liability claims"
+" against us, which refer to damages of material or immaterial nature, "
+"which are use or non-use of the information provided or the use of "
+"incorrect or incomplete information are excluded"
+
+#: templates/impressum.html:60
+msgid "inhaltOnline"
+msgstr "Content of the Online Offering:"
+
+#: templates/impressum.html:61
+msgid "inhaltOnlineText"
+msgstr ""
+"The content of this website/ web app is provided solely for informational"
+" purposes. We make no guarantee regarding the timeliness, accuracy, "
+"completeness, or quality of the provided information. Any liability "
+"claims against us relating to material or immaterial damages caused by "
+"the use or non-use of the presented information, or by the use of "
+"incorrect or incomplete information, are fundamentally excluded."
+
+#: templates/impressum.html:65
+msgid "links"
+msgstr "References and Links:"
+
+#: templates/impressum.html:66
+msgid "linksText"
+msgstr ""
+"This website/ web app may contain references and/or links to third-party "
+"websites over which we have no control. The respective provider or "
+"operator of the linked pages is always responsible for their content. We "
+"cannot assume permanent control over the content of linked pages without "
+"concrete evidence of legal violations. Upon becoming aware of any such "
+"violations, we will remove the respective links immediately."
+
+#: templates/impressum.html:70
+msgid "copyright"
+msgstr "Copyright:"
+
+#: templates/impressum.html:71
+msgid "copyrightText"
+msgstr ""
+"The content and works published on this website/ web app are subject to "
+"German copyright law. Reproduction, editing, distribution, and any kind "
+"of exploitation beyond the limits of copyright require the written "
+"consent of the respective author or creator. Downloads and copies of this"
+" page are only permitted for private, non-commercial use."
+
+#: templates/impressum.html:75
+msgid "datenschutz"
+msgstr "Data Protection:"
+
+#: templates/impressum.html:76
+msgid "DatenschutzText"
+msgstr ""
+"The use of this website/ web app is generally possible without providing "
+"personal data. If personal data (e.g., name, address, or email addresses)"
+" is collected on our website, it is always done on a voluntary basis to "
+"the extent possible. Further information on the handling of personal data"
+" can be found in our privacy policy."
 
 #: templates/layout.html:27
 msgid "home"
@@ -183,10 +350,6 @@ msgstr "Sources"
 #: templates/layout.html:38
 msgid "appExtra"
 msgstr "Extra"
-
-#: templates/layout.html:40
-msgid "about"
-msgstr "About"
 
 #: templates/layout.html:50
 msgid "userPresentation"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-26 00:14+0200\n"
+"POT-Creation-Date: 2023-06-29 23:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,48 +93,56 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: routes.py:37
+#: routes.py:38
 msgid "Failed to login"
 msgstr ""
 
-#: routes.py:61
+#: routes.py:62
 msgid "User created successfully!"
 msgstr ""
 
-#: routes.py:83
+#: routes.py:84
 msgid "Failed to update password"
 msgstr ""
 
-#: routes.py:131
+#: routes.py:133
 msgid "Movie updated successfully!"
 msgstr ""
 
-#: routes.py:153
+#: routes.py:155
 msgid "Movie added successfully!"
 msgstr ""
 
-#: routes.py:171
+#: routes.py:173
 msgid "Movie deleted successfully!"
 msgstr ""
 
-#: templates/crud.html:9
+#: templates/crud.html:6
+msgid "crudTitel"
+msgstr ""
+
+#: templates/crud.html:13
 msgid "addMovie"
 msgstr ""
 
-#: templates/crud.html:16
+#: templates/crud.html:21
 msgid "movieTitle"
 msgstr ""
 
-#: templates/crud.html:17
+#: templates/crud.html:22
 msgid "movieDirector"
 msgstr ""
 
-#: templates/crud.html:18
+#: templates/crud.html:23
 msgid "movieDuration"
 msgstr ""
 
-#: templates/crud.html:19
+#: templates/crud.html:24
 msgid "movieDescription"
+msgstr ""
+
+#: templates/crud.html:25
+msgid "action"
 msgstr ""
 
 #: templates/forgotPassword.html:11
@@ -151,6 +159,126 @@ msgstr ""
 
 #: templates/home.html:4
 msgid "welcome"
+msgstr ""
+
+#: templates/impressum.html:6 templates/layout.html:40
+msgid "about"
+msgstr ""
+
+#: templates/impressum.html:9
+msgid "infoDetails"
+msgstr ""
+
+#: templates/impressum.html:11 templates/impressum.html:47
+msgid "firma"
+msgstr ""
+
+#: templates/impressum.html:12 templates/impressum.html:48
+msgid "address"
+msgstr ""
+
+#: templates/impressum.html:13 templates/impressum.html:49
+msgid "place"
+msgstr ""
+
+#: templates/impressum.html:14 templates/impressum.html:50
+msgid "country"
+msgstr ""
+
+#: templates/impressum.html:14 templates/impressum.html:50
+msgid "germany"
+msgstr ""
+
+#: templates/impressum.html:18
+msgid "contact"
+msgstr ""
+
+#: templates/impressum.html:20
+msgid "phone"
+msgstr ""
+
+#: templates/impressum.html:21
+msgid "email"
+msgstr ""
+
+#: templates/impressum.html:25
+msgid "representativeWith"
+msgstr ""
+
+#: templates/impressum.html:27
+msgid "representativeName"
+msgstr ""
+
+#: templates/impressum.html:28
+msgid "representativePosition"
+msgstr ""
+
+#: templates/impressum.html:28
+msgid "representativePositionName"
+msgstr ""
+
+#: templates/impressum.html:32
+msgid "registerAndRegisterNumber"
+msgstr ""
+
+#: templates/impressum.html:34
+msgid "register"
+msgstr ""
+
+#: templates/impressum.html:35
+msgid "registerNumber"
+msgstr ""
+
+#: templates/impressum.html:39
+msgid "taxesID"
+msgstr ""
+
+#: templates/impressum.html:41
+msgid "TaxesIDnummer"
+msgstr ""
+
+#: templates/impressum.html:45
+msgid "contentResposible"
+msgstr ""
+
+#: templates/impressum.html:54
+msgid "disclaimer"
+msgstr ""
+
+#: templates/impressum.html:55
+msgid "disclaimerText"
+msgstr ""
+
+#: templates/impressum.html:60
+msgid "inhaltOnline"
+msgstr ""
+
+#: templates/impressum.html:61
+msgid "inhaltOnlineText"
+msgstr ""
+
+#: templates/impressum.html:65
+msgid "links"
+msgstr ""
+
+#: templates/impressum.html:66
+msgid "linksText"
+msgstr ""
+
+#: templates/impressum.html:70
+msgid "copyright"
+msgstr ""
+
+#: templates/impressum.html:71
+msgid "copyrightText"
+msgstr ""
+
+#: templates/impressum.html:75
+msgid "datenschutz"
+msgstr ""
+
+#: templates/impressum.html:76
+msgid "DatenschutzText"
 msgstr ""
 
 #: templates/layout.html:27
@@ -171,10 +299,6 @@ msgstr ""
 
 #: templates/layout.html:38
 msgid "appExtra"
-msgstr ""
-
-#: templates/layout.html:40
-msgid "about"
 msgstr ""
 
 #: templates/layout.html:50

@@ -1,5 +1,80 @@
 {% extends "layout.html" %}
 {% block content %}
 
+<div class="d-flex flex-column ps-5 pt-5 {% if dark_mode %}dark-mode layer0 fontDM{% else %}bg-light{% endif %}">
+    
+    <h1 class="fw-bold">{{ _('about') }}</h1>
+    
+    <div class="w-50 pb-5 pt-5">  
+        <h3 class="fw-bold pb-4">{{ _('infoDetails') }}</h3>
+
+        <p><strong>{{ _('firma') }}</strong> REIFE TOMATEN GmbH</p>
+        <p><strong>{{ _('address') }}</strong> Brotstraße, 6969</p>
+        <p><strong>{{ _('place') }}</strong> 65854, Trier</p>
+        <p><strong>{{ _('country') }}</strong> {{ _('germany') }}</p>
+    </div>
+    <hr>
+    <div class="w-50 pb-5 pt-5">
+        <h3 class="fw-bold pb-4">{{ _('contact') }}</h3>
+        
+        <p><strong>{{ _('phone') }}</strong> +49 542 312 188</p>
+        <p><strong>{{ _('email') }}</strong> info@rtbb.de</p>
+    </div>
+    <hr>
+    <div class="w-50 pb-5 pt-5">
+        <h3 class="fw-bold pb-4">{{ _('representativeWith') }}</h3>
+        
+        <p><strong>{{ _('representativeName') }}</strong> Benis Manxhuku</p>
+        <p><strong>{{ _('representativePosition') }}</strong> {{ _('representativePositionName') }}</p>
+    </div>
+    <hr>
+    <div class="w-50 pb-5 pt-5">
+        <h3 class="fw-bold pb-4">{{ _('registerAndRegisterNumber') }}</h3>
+        
+        <p><strong>{{ _('register') }}</strong> Handelsregister</p>
+        <p><strong>{{ _('registerNumber') }}</strong> HRB 07132337</p>
+    </div>
+    <hr>
+    <div class="w-50 pb-5 pt-5">
+        <h3 class="fw-bold pb-4">{{ _('taxesID') }}</h3>
+
+        <p><strong>{{ _('TaxesIDnummer') }}</strong> DE 596 188 941 </p>
+    </div>
+    <hr>
+    <div class="w-50 pb-5 pt-5">
+        <h3 class="fw-bold pb-4">{{ _('contentResposible') }}</h3>
+
+        <p><strong>{{ _('firma') }}</strong> Berufsbildende Schule Gestaltung und Technik Trier</p>
+        <p><strong>{{ _('address') }}</strong> Langstraße, 15</p>
+        <p><strong>{{ _('place') }}</strong> 54290, Trier</p>
+        <p><strong>{{ _('country') }}</strong> {{ _('germany') }}</p>
+    </div>
+    <hr>
+    <div class="w-50 pb-5 pt-5">
+        <h2 class="fw-bold pb-4">{{ _('disclaimer') }}</h2>
+        <p>{{ _('disclaimerText') }}</p>
+        
+    </div>
+    <hr>
+    <div class="w-50 pb-5 pt-5">
+        <h2 class="fw-bold pb-4">{{ _('inhaltOnline') }}</h2>
+        <p>{{ _('inhaltOnlineText') }}</p>
+    </div>
+    <hr>
+    <div class="w-50 pb-5 pt-5">
+        <h2 class="fw-bold pb-4">{{ _('links') }}</h2>
+        <p>{{ _('linksText') }}</p> 
+    </div>
+    <hr>
+    <div class="w-50 pb-5 pt-5">
+        <h2 class="fw-bold pb-4">{{ _('copyright') }}</h2>
+        <p>{{ _('copyrightText') }}</p>
+    </div>
+
+    <div class="w-50 pb-5 pt-5">
+        <h2 class="fw-bold pb-4">{{ _('datenschutz') }}</h2>
+        <p>{{ _('DatenschutzText') }}</p>
+    </div>
+</div>
 
 {% endblock %}

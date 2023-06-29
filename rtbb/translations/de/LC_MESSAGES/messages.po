@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-26 00:14+0200\n"
+"POT-Creation-Date: 2023-06-29 23:02+0200\n"
 "PO-Revision-Date: 2023-06-24 19:10+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -49,7 +49,7 @@ msgstr "Neues Passwort"
 
 #: forms.py:29
 msgid "Confirm new password"
-msgstr "Passwort Bestätigung"
+msgstr "Neues Passwort Bestätigen"
 
 #: forms.py:30
 msgid "Confirm"
@@ -106,49 +106,59 @@ msgstr "Bearbeiten"
 msgid "Delete"
 msgstr "Löschen"
 
-#: routes.py:37
+#: routes.py:38
 msgid "Failed to login"
 msgstr "Anmeldung fehlgeschlagen!"
 
-#: routes.py:61
+#: routes.py:62
 msgid "User created successfully!"
 msgstr "Benutzer erfolgreich erstellt!"
 
-#: routes.py:83
+#: routes.py:84
 msgid "Failed to update password"
 msgstr "Aktualisierung fehlgeschlagen!"
 
-#: routes.py:131
+#: routes.py:133
 msgid "Movie updated successfully!"
 msgstr "Film erfolgreich aktualisiert!"
 
-#: routes.py:153
+#: routes.py:155
 msgid "Movie added successfully!"
 msgstr "Film erfolgreich erstellt!"
 
-#: routes.py:171
+#: routes.py:173
 msgid "Movie deleted successfully!"
 msgstr "Film erfolgreich gelöscht!"
 
-#: templates/crud.html:9
+#: templates/crud.html:6
+#, fuzzy
+msgid "crudTitel"
+msgstr "Film aktualisieren"
+
+#: templates/crud.html:13
 msgid "addMovie"
 msgstr "Film Hinzufügen"
 
-#: templates/crud.html:16
+#: templates/crud.html:21
 msgid "movieTitle"
 msgstr "Titel"
 
-#: templates/crud.html:17
+#: templates/crud.html:22
 msgid "movieDirector"
 msgstr "Direktor"
 
-#: templates/crud.html:18
+#: templates/crud.html:23
 msgid "movieDuration"
 msgstr "Spielzeit"
 
-#: templates/crud.html:19
+#: templates/crud.html:24
 msgid "movieDescription"
 msgstr "Beschreibung"
+
+#: templates/crud.html:25
+#, fuzzy
+msgid "action"
+msgstr "Spielzeit"
 
 #: templates/forgotPassword.html:11
 msgid "forgotPassowdTitle"
@@ -166,6 +176,169 @@ msgstr "Anmelden"
 msgid "welcome"
 msgstr ""
 
+#: templates/impressum.html:6 templates/layout.html:40
+msgid "about"
+msgstr "Impressum"
+
+#: templates/impressum.html:9
+msgid "infoDetails"
+msgstr "Angaben gemäß § 5 TMG:"
+
+#: templates/impressum.html:11 templates/impressum.html:47
+#, fuzzy
+msgid "firma"
+msgstr "Firma"
+
+#: templates/impressum.html:12 templates/impressum.html:48
+msgid "address"
+msgstr "Anschrift:"
+
+#: templates/impressum.html:13 templates/impressum.html:49
+msgid "place"
+msgstr "PLZ/Ort:"
+
+#: templates/impressum.html:14 templates/impressum.html:50
+msgid "country"
+msgstr "Land:"
+
+#: templates/impressum.html:14 templates/impressum.html:50
+msgid "germany"
+msgstr "Deutschland"
+
+#: templates/impressum.html:18
+msgid "contact"
+msgstr "Kontakt"
+
+#: templates/impressum.html:20
+#, fuzzy
+msgid "phone"
+msgstr "Telefon:"
+
+#: templates/impressum.html:21
+#, fuzzy
+msgid "email"
+msgstr "E-Mail:"
+
+#: templates/impressum.html:25
+#, fuzzy
+msgid "representativeWith"
+msgstr "Vertreten durch:"
+
+#: templates/impressum.html:27
+#, fuzzy
+msgid "representativeName"
+msgstr "Name des Vertretungsberechtigten:"
+
+#: templates/impressum.html:28
+#, fuzzy
+msgid "representativePosition"
+msgstr "Position im Unternehmen:"
+
+#: templates/impressum.html:28
+#, fuzzy
+msgid "representativePositionName"
+msgstr "Kommunikationsvertreter"
+
+#: templates/impressum.html:32
+msgid "registerAndRegisterNumber"
+msgstr "Register und Registernummer:"
+
+#: templates/impressum.html:34
+#, fuzzy
+msgid "register"
+msgstr "Register:"
+
+#: templates/impressum.html:35
+#, fuzzy
+msgid "registerNumber"
+msgstr "Registernummer:"
+
+#: templates/impressum.html:39
+msgid "taxesID"
+msgstr "Umsatzsteuer-ID:"
+
+#: templates/impressum.html:41
+msgid "TaxesIDnummer"
+msgstr "Umsatzsteueridentifikationsnummer:"
+
+#: templates/impressum.html:45
+msgid "contentResposible"
+msgstr "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:"
+
+#: templates/impressum.html:54
+msgid "disclaimer"
+msgstr "Haftungsausschluss (Disclaimer):"
+
+#: templates/impressum.html:55
+msgid "disclaimerText"
+msgstr ""
+"Der Inhalt dieser Webseite/ dieses Web-Apps dient ausschließlich zu "
+"Informationszwecken. Wir übernehmen keine Gewähr für die Aktualität, "
+"Richtigkeit, Vollständigkeit oder Qualität der bereitgestellten "
+"Informationen. Jegliche Haftungsansprüche gegen uns, die sich auf Schäden"
+" materieller oder immaterieller Art beziehen, die durch die Nutzung oder "
+"Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung "
+"fehlerhafter und unvollständiger Informationen verursacht wurden, sind "
+"grundsätzlich ausgeschlossen."
+
+#: templates/impressum.html:60
+msgid "inhaltOnline"
+msgstr "Inhalt des Online-Angebots:"
+
+#: templates/impressum.html:61
+msgid "inhaltOnlineText"
+msgstr ""
+"Der Inhalt dieser Webseite/ dieses Web-Apps dient ausschließlich zu "
+"Informationszwecken. Wir übernehmen keine Gewähr für die Aktualität, "
+"Richtigkeit, Vollständigkeit oder Qualität der bereitgestellten "
+"Informationen. Jegliche Haftungsansprüche gegen uns, die sich auf Schäden"
+" materieller oder immaterieller Art beziehen, die durch die Nutzung oder "
+"Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung "
+"fehlerhafter und unvollständiger Informationen verursacht wurden, sind "
+"grundsätzlich ausgeschlossen."
+
+#: templates/impressum.html:65
+msgid "links"
+msgstr "Verweise und Links:"
+
+#: templates/impressum.html:66
+msgid "linksText"
+msgstr ""
+"Diese Webseite/ dieses Web-App kann Verweise (Links) zu externen "
+"Webseiten Dritter enthalten, auf deren Inhalte wir keinen Einfluss haben."
+" Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter "
+"oder Betreiber der Seiten verantwortlich. Eine permanente inhaltliche "
+"Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte "
+"einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von "
+"Rechtsverletzungen werden wir derartige Links umgehend entfernen."
+
+#: templates/impressum.html:70
+msgid "copyright"
+msgstr "Urheberrecht:"
+
+#: templates/impressum.html:71
+msgid "copyrightText"
+msgstr ""
+"Die auf dieser Webseite/ in diesem Web-App veröffentlichten Inhalte und "
+"Werke unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, "
+"Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der "
+"Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des "
+"jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind"
+" nur für den privaten, nicht kommerziellen Gebrauch gestattet."
+
+#: templates/impressum.html:75
+msgid "datenschutz"
+msgstr "Datenschutz:"
+
+#: templates/impressum.html:76
+msgid "DatenschutzText"
+msgstr ""
+"Die Nutzung dieser Webseite/ dieses Web-Apps ist in der Regel ohne Angabe"
+" personenbezogener Daten möglich. Soweit auf dieser Seite "
+"personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-"
+"Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf "
+"freiwilliger Basis."
+
 #: templates/layout.html:27
 msgid "home"
 msgstr "Startseite"
@@ -176,7 +349,7 @@ msgstr "Admintools"
 
 #: templates/layout.html:34
 msgid "moreInfo"
-msgstr "Mehere Infos"
+msgstr "Mehrere Infos"
 
 #: templates/layout.html:37
 msgid "sources"
@@ -185,10 +358,6 @@ msgstr "Quellen"
 #: templates/layout.html:38
 msgid "appExtra"
 msgstr "Extra"
-
-#: templates/layout.html:40
-msgid "about"
-msgstr "Impressum"
 
 #: templates/layout.html:50
 msgid "userPresentation"

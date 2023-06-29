@@ -1,91 +1,93 @@
 {% extends "layout.html" %}
 {% block content %}
-
-    <div class="d-flex justify-content-end">
-        <button class="btn btn-primary mt-5 me-5 mx-2 d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#addBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-          </svg>
-          <strong>{{ _('addMovie') }}</strong>
-        </button>
-    </div>
-
-    <table id="crudContent" class="align-self-center w-75 table table-hover">
-        <thead>
-        <tr>
-            <th scope="col">{{ _('movieTitle') }}</th>
-            <th scope="col">{{ _('movieDirector') }}</th>
-            <th scope="col">{{ _('movieDuration') }}</th>
-            <th scope="col">{{ _('movieDescription') }}</th>
-        </tr>
-        </thead>
-        <tbody>
-
-            {% for movie in movies %}
-            <tr>
-                <td>{{ movie.title }}</td>
-                <td>{{ movie.director }}</td>
-                <td>{{ movie.duration }} mins.</td>
-                <td>{{ movie.description }}</td>
-                <td class="noWarpCrud">
-                    <a href="{{ url_for('update', movie_id=movie.id) }}" class="bg-warning crudBtn text-dark " data-movie-id="{{ movie.id }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                            <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                        </svg>
-                    </a>
-                </td>
-                <td class="noWarpCrud">
-                    <form action="{{ url_for('delete_movie', movie_id=movie.id) }}" method="POST">
-                        {{ delete.csrf_token }}
-                        <button class="btnRemoveStyle bg-danger crudBtn text-white" data-bs-toggle="modal" data-bs-target="#removeBtn" data-id="{{ movie.id }}" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-                            </svg>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-
-        </tbody>
-    </table>
-    
-    <!-- Modal for Add-->
-    <div class="modal fade" id="addBtn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add a Movie</h5>
-            </div>
-            
-            <form method="POST" action="{{ url_for('crud') }}">
-                {{ addMovies.hidden_tag() }}
-                <div class="modal-body">
-                    <div class="mb-3">
-                        {{ addMovies.title.label(class="form-label")}}
-                        {{ addMovies.title(class="form-control")}}
-                    </div>
-                    <div class="mb-3">
-                        {{ addMovies.director.label(class="form-label")}}
-                        {{ addMovies.director(class="form-control") }}
-                    </div>
-                    <div class="mb-3">
-                        {{ addMovies.duration.label(class="form-label")}}
-                        {{ addMovies.duration(class="form-control")}}
-                    </div>
-                    <div class="mb-3">
-                        {{ addMovies.description.label(class="form-label")}}
-                        {{ addMovies.description(class="form-control") }}
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    {{ addMovies.movieSubmit(class="btn btn-primary") }}
-                </div>
-            </form>
-
-          </div>
+    <div class="d-flex flex-column {% if dark_mode %}dark-mode layer0{% else %}bg-light{% endif %}">
+        <div class="d-flex justify-content-end pb-5 w-100">
+            <button class="btn btn-primary mt-5 me-5 mx-2 d-inline-flex align-items-center borderControll" data-bs-toggle="modal" data-bs-target="#addBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                </svg>
+                <strong>{{ _('addMovie') }}</strong>
+            </button>
         </div>
-      </div>
+
+        <table id="crudContent" class="align-self-center w-75 table table-bordered table align-middle tableBorder {% if dark_mode %}dark-mode layer2 fontDM{% else %}text-black{% endif %}">
+            <thead class="{% if dark_mode %}dark-mode layer1{% else %}dark-mode layer1 fontDM{% endif %}">
+                <tr>
+                    <th scope="col">{{ _('movieTitle') }}</th>
+                    <th scope="col">{{ _('movieDirector') }}</th>
+                    <th scope="col">{{ _('movieDuration') }}</th>
+                    <th scope="col">{{ _('movieDescription') }}</th>
+                    <th colspan="2" scope="col">{{ _('action') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for movie in movies %}
+                <tr class="{% if loop.index is divisibleby(2) %}layer3{% else %}layer2{% endif %}">
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.director }}</td>
+                    <td>{{ movie.duration }} mins.</td>
+                    <td>{{ movie.description }}</td>
+                    <td class="noWarpCrud">
+                        <a href="{{ url_for('update', movie_id=movie.id) }}" class="bg-warning crudBtn text-dark " data-movie-id="{{ movie.id }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                            </svg>
+                        </a>
+                    </td>
+                    <td class="noWarpCrud">
+                        <form action="{{ url_for('delete_movie', movie_id=movie.id) }}" method="POST">
+                            {{ delete.csrf_token }}
+                            <button class="btnRemoveStyle bg-danger crudBtn text-white" data-bs-toggle="modal" data-bs-target="#removeBtn" data-id="{{ movie.id }}" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                    <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        
+        <!-- Modal for Add-->
+        <div class="modal fade" id="addBtn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add a Movie</h5>
+                </div>
+                
+                <form method="POST" action="{{ url_for('crud') }}">
+                    {{ addMovies.hidden_tag() }}
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            {{ addMovies.title.label(class="form-label")}}
+                            {{ addMovies.title(class="form-control")}}
+                        </div>
+                        <div class="mb-3">
+                            {{ addMovies.director.label(class="form-label")}}
+                            {{ addMovies.director(class="form-control") }}
+                        </div>
+                        <div class="mb-3">
+                            {{ addMovies.duration.label(class="form-label")}}
+                            {{ addMovies.duration(class="form-control")}}
+                        </div>
+                        <div class="mb-3">
+                            {{ addMovies.description.label(class="form-label")}}
+                            {{ addMovies.description(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        {{ addMovies.movieSubmit(class="btn btn-primary") }}
+                    </div>
+                </form>
+
+            </div>
+            </div>
+        </div>
+        </div>
     </div>
 {% endblock %}
