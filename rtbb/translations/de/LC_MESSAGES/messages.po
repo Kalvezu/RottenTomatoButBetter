@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-29 23:02+0200\n"
+"POT-Creation-Date: 2023-06-30 07:22+0200\n"
 "PO-Revision-Date: 2023-06-24 19:10+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -130,32 +130,27 @@ msgstr "Film erfolgreich erstellt!"
 msgid "Movie deleted successfully!"
 msgstr "Film erfolgreich gelöscht!"
 
-#: templates/crud.html:6
-#, fuzzy
-msgid "crudTitel"
-msgstr "Film aktualisieren"
-
-#: templates/crud.html:13
+#: templates/crud.html:9
 msgid "addMovie"
 msgstr "Film Hinzufügen"
 
-#: templates/crud.html:21
+#: templates/crud.html:16
 msgid "movieTitle"
 msgstr "Titel"
 
-#: templates/crud.html:22
+#: templates/crud.html:17
 msgid "movieDirector"
 msgstr "Direktor"
 
-#: templates/crud.html:23
+#: templates/crud.html:18
 msgid "movieDuration"
 msgstr "Spielzeit"
 
-#: templates/crud.html:24
+#: templates/crud.html:19
 msgid "movieDescription"
 msgstr "Beschreibung"
 
-#: templates/crud.html:25
+#: templates/crud.html:20
 #, fuzzy
 msgid "action"
 msgstr "Spielzeit"
@@ -394,4 +389,7 @@ msgstr "Film aktualisieren"
 
 #~ msgid "Hello"
 #~ msgstr ""
+
+#~ msgid "crudTitel"
+#~ msgstr "Film aktualisieren"
 

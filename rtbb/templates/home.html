@@ -1,6 +1,91 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h1>{{ _('welcome') }}</h1>
+    <div class="{% if dark_mode %}dark-mode layer1{% else %}bg-light{% endif %}">
+        <div class="{% if dark_mode %}dark-mode skew-c-dm{% else %}skew-c-dm{% endif %}"></div>
+        <div class="row {% if dark_mode %}dark-mode colour-block-dm{% else %}colour-block{% endif %}">
+            <div class="col m-5">
+                <a class="card-text" href="{{ url_for('runtime') }}">
+                <div class="card shadow-sm">
+                    <img src="{{ url_for('static', filename='release.png') }}" alt="test" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">"Release Date Riddles" is a game mode that challenges your movie knowledge by guessing the release dates. Test your intuition and determine when each movie was released. Use clues and hints to refine your predictions, earn points, and climb the leaderboard. Show off your film expertise and enjoy the thrill of deciphering release dates!</p>
 
+                            <hr>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                            <strong class="text-body-secondary">Highscore: 134</strong>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        
+            <div class="col m-5">
+                <a class="card-text" href="{{ url_for('runtime') }}">
+                <div class="card shadow-sm">
+                    <img src="{{ url_for('static', filename='runtime.png') }}" alt="test" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">"Guess the Duration" is a captivating game mode that combines entertainment, knowledge, and strategy. It's time to showcase your cinematic expertise and take your place among the film connoisseurs. Get ready to immerse yourself in the enchanting world of movies and let the guessing begin!</p>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong class="text-body-secondary">Highscore: 467</strong>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    
+        <div class="{% if dark_mode %}dark-mode skew-cc-dm{% else %}skew-cc-dm{% endif %}"></div>
+        <div class="row mo-auto w-50 {% if dark_mode %}dark-mode white-block-dm{% else %}white-block{% endif %}">
+            <a class="card-text" href="{{ url_for('discord') }}">
+                <div class="card shadow-sm">
+                    <img src="{{ url_for('static', filename='new.jpg') }}" alt="test" class="card-img-top">
+                    <div class="card-body">
+                        <strong>Currently working on bigger and better game modes for you</strong>
+
+                        <hr>
+
+                        <p>Join our Discord if you want to see new updates.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong class="text-body-secondary"><u>Discord</u></strong>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Carousel -->
+        <div class="{% if dark_mode %}dark-mode skew-c-dm{% else %}skew-c-dm{% endif %}"></div>
+        <div id="carouselRide" class="carousel slide {% if dark_mode %}dark-mode colour-block-dm{% else %}colour-block{% endif %}" data-bs-pause="False" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselRide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselRide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselRide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>            
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3500">
+                    <img src="{{ url_for('static', filename='image1.jpg') }}" class="w-75" alt="">
+                </div>
+                <div class="carousel-item" data-bs-interval="3500">
+                    <img src="{{ url_for('static', filename='image2.jpg') }}" class="w-75" alt="">
+                </div>
+                <div class="carousel-item" data-bs-interval="3500">
+                    <img src="{{ url_for('static', filename='image3.jpg') }}" class="w-75" alt="">
+                </div>
+            </div>
+            <button class="carousel-control-prev" href="#carouselRide" type="button" data-bs-target="#carouselRide" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" href="#carouselRide" type="button" data-bs-target="#carouselRide" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>   
+    
 {% endblock %}

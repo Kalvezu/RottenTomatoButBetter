@@ -20,6 +20,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .crazyBtn {
     font-weight: bolder;
     --b: 0.2em;   
@@ -39,6 +43,63 @@ time, mark, audio, video {
     --_s: .3s;
 }
 
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Homepage Styles */
+.card-text {
+  color: black;
+  text-decoration: none !important;
+}
+
+.colour-block {
+  background:#fd8d20;
+  padding:5% 1% 5% 1%;
+}
+
+.white-block {
+  background: var(--layer8-color);
+  padding:5% 1% 5% 1%;
+}
+
+.colour-block-dm {
+  background:#fd8e67;
+  padding:5% 1% 5% 1%;
+}
+
+.white-block-dm {
+  background:var(--layer1-color);
+  padding:5% 1% 5% 1%;
+}
+
+.skew-cc{
+  width:100%;
+  height:100px;
+  left:0px;
+  background: linear-gradient(to right bottom, #fd8d20 49%, #fff 50%),    
+              linear-gradient(-50deg, #ffffff 16px, #000 0);
+}
+
+.skew-c{
+  width:100%;
+  height:100px;
+  left:0px;
+  background: linear-gradient(to left bottom, #fff 49%, #fd8d20 50%);
+}
+
+.skew-cc-dm{
+  width:100%;
+  height:100px;
+  left:0px;
+  background: linear-gradient(to right bottom, #fd8e67 49%, var(--layer1-color) 50%),    linear-gradient(-50deg, #ffffff 16px, #000 0);
+}
+
+.skew-c-dm{
+  width:100%;
+  height:100px;
+  left:0px;
+  background: linear-gradient(to left bottom, var(--layer1-color) 49%, #fd8e67 50%);
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
 /* Nav Styles */
 .navSizing {
   height: 5rem ;
@@ -48,8 +109,10 @@ time, mark, audio, video {
   background-color: var(--layer3-color);
   color: var(--layer8-color);
   text-shadow: 1px .1px 2px var(--layer0-color);
+  border-radius: 10px 10px 10px 10px;
 }
 
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
 /* CRUD Styles */
 .table-bordered th, .table-bordered td { 
   border: 1px solid #393939 !important;
@@ -76,6 +139,7 @@ time, mark, audio, video {
   white-space: nowrap;
 }
 
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
 /* Dark Mode Styles */
 .layer0 {background-color: var(--layer0-color)}
 .layer1 {background-color: var(--layer1-color)}

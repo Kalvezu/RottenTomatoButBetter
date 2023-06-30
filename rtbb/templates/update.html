@@ -1,31 +1,31 @@
 {% extends "layout.html" %}
 {% block content %}
  
-    <div class="d-flex justify-content-center bg-light pt-5 vh-100">
-        <div class="w-25">           
-            <form class="d-flex flex-column align-items-center border rounded-4 p-5 bg-white" method="POST" action="{{ url_for('update', movie_id=movie.id) }}">
-                
-                <div class="d-flex flex-column justify-content-center align-items-center border-bottom pb-4 w-100">
-                    <h1 class="">{{ _('updateTitle') }}</h1>
-                </div>
+<div class="d-flex justify-content-center pt-5 vh-100 {% if dark_mode %}dark-mode layer1 fontDM{% else %}bg-light{% endif %}">
+    <div class="w-25">           
+        <form class="d-flex flex-column align-items-center borderControll rounded-4 p-5 {% if dark_mode %}dark-mode layer2 font9{% else %}bg-white{% endif %}" method="POST" action="{{ url_for('update', movie_id=movie.id) }}">
+            
+            <div class="d-flex flex-column justify-content-center align-items-center border-bottom pb-4 w-100">
+                <h1 class="{% if dark_mode %}dark-mode fontDM{% endif %}">{{ _('updateTitle') }}</h1>
+            </div>
 
-                {{ update_form.hidden_tag() }}
+            {{ update_form.hidden_tag() }}
 
-                {{ update_form.title.label(class="me-auto mt-5 fw-bold form-label") }}
-                {{ update_form.title(class="form-control") }}
+            {{ update_form.title.label(class="me-auto mt-5 fw-bold form-label") }}
+            {{ update_form.title(class="form-control") }}
 
-                {{ update_form.director.label(class="me-auto fw-bold form-label mt-3") }}
-                {{ update_form.director(class="form-control") }}
+            {{ update_form.director.label(class="me-auto fw-bold form-label mt-3") }}
+            {{ update_form.director(class="form-control") }}
 
-                {{ update_form.duration.label(class="me-auto form-label fw-bold mt-3") }}
-                {{ update_form.duration(class="form-control") }}
+            {{ update_form.duration.label(class="me-auto form-label fw-bold mt-3") }}
+            {{ update_form.duration(class="form-control") }}
 
-                {{ update_form.description.label(class="me-auto form-label mt-3 fw-bold") }}
-                {{ update_form.description(class="form-control") }}
+            {{ update_form.description.label(class="me-auto form-label mt-3 fw-bold") }}
+            {{ update_form.description(class="form-control") }}
 
-                {{ update_form.updateSubmit(class="btn btn-primary mt-4") }}
-            </form>
-        </div>
+            {{ update_form.updateSubmit(class="btn borderControll fw-bold mt-5 pt-2 pb-2 ps-5 pe-5 " + ("btn-primary" if dark_mode else "btn-primary")) }}
+        </form>
     </div>
+</div>
 
 {% endblock %}

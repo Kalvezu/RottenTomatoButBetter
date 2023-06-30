@@ -103,6 +103,38 @@ def quellen():
 def impressum():
     return render_template('impressum.html')
 
+@app.route('/releasedate')
+def releasedate():
+    return render_template('releasedate.html')
+
+@app.route('/runtime')
+def runtime():
+    return render_template('runtime.html')
+
+@app.route('/discord')
+def discord():
+    return render_template('socialmedias/discord.html')
+
+@app.route('/twitter')
+def twitter():
+    return render_template('socialmedias/twitter.html')
+
+@app.route('/facebook')
+def facebook():
+    return render_template('socialmedias/facebook.html')
+
+@app.route('/linkedin')
+def linkedin():
+    return render_template('socialmedias/linkedin.html')
+
+@app.route('/youtube')
+def youtube():
+    return render_template('socialmedias/youtube.html')
+
+@app.route('/instagram')
+def instagram():
+    return render_template('socialmedias/instagram.html')
+
 @app.route('/toggle_dark_mode')
 def toggle_dark_mode():
     if 'dark_mode' in session:

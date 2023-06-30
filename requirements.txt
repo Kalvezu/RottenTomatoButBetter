@@ -1,4 +1,5 @@
 flask
+jquery
 psycopg2
 flask-wtf
 flask-sqlalchemy
