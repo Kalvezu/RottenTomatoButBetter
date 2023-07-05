@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<<<<<<< Updated upstream
     <div class="d-flex justify-content-center pt-5 vh-100 {% if dark_mode %}dark-mode layer0{% else %}bg-light{% endif %}">
         <div class="w-25">
 
@@ -12,26 +11,6 @@
                 <div class="d-flex flex-column justify-content-center align-items-center border-bottom pb-4 w-100">
                     <h1 class="{% if dark_mode %}dark-mode fontDM{% endif %}">{{ _('loginTitle') }}</h1>
                 </div>
-=======
-    <div class="d-flex justify-content-center">
-        <form method="POST" action="" class="d-flex flex-column align-items-center border rounded-4 p-5">
-
-            {{ form.hidden_tag() }}
-
-            <div class="d-flex flex-column align-items-center w-100 border-bottom">
-                <p>Welcome to </p>
-                <p>Rotten Tomatoes But Better</p>
-            </div>
-
-
-            {{ form.username.label(class="form-label mt-5") }}
-            {{ form.username (class="form-control")}}
-
-            {{ form.password.label(class="form-label mt-3")}}
-            {{ form.password(class="form-control")}}
-            
-            {{ form.loginSubmit (class="btn btn-primary mt-5") }}
->>>>>>> Stashed changes
 
                 {{ form.username (class="form-control mt-5 w-75 borderControll " + ("layer7" if dark_mode else ""))}}
 

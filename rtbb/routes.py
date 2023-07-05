@@ -1,22 +1,20 @@
-<<<<<<< Updated upstream
 from rtbb import app, db, get_locale
 from flask import render_template, flash, redirect, url_for, request, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from rtbb.forms import LoginForm, movieForm, deleteMovie, updateForm, registerForm, forgotPasswordForm
 from flask_login import login_user, LoginManager, login_required, logout_user
-=======
-from rtbb import app, db
-from flask import render_template, flash, redirect, url_for, request
-from rtbb.forms import LoginForm, movieForm, deleteMovie, updateForm, RegisterForm
->>>>>>> Stashed changes
 from rtbb.models import Login, Movies
 from flask_babel import gettext
+import os
+import random
 
-
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------<>
 #Config für Login/Register/Forgot Password/Auth
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
+
+image_folder = "rtbb/static/covers"
 
 @login_manager.user_loader
 def load_user(id):
@@ -91,10 +89,56 @@ def forgotPassword():
 
     return render_template('forgotPassword.html', form=form)
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------<>
+#Game
+@app.route('/compare_images', methods=['POST'])
+def compare_images():
+    choice = request.form.get('choice')
+    current_right_image = request.args.get('current_right_image')
+    random_image = request.args.get('random_image')
+    image_files = os.listdir(image_folder)
+    
+    if choice == 'higher':
+        new_current_right_image = random_image
+        image_files.remove(new_current_right_image)
+        new_random_image = random.choice(image_files)
+    elif choice == 'lower':
+        new_random_image = random_image
+        image_files.remove(new_random_image)
+        new_current_right_image = random.choice(image_files)
+    else:
+        new_current_right_image = current_right_image
+        new_random_image = random_image
+    
+    return render_template('releasedate.html', current_right_image=new_current_right_image, random_image=new_random_image)
+
+@app.route('/releasedate')
+def releasedate():
+    image_files = os.listdir(image_folder)
+    
+    if image_files:
+        current_right_image = random.choice(image_files)
+        image_files.remove(current_right_image)
+        random_image = random.choice(image_files)
+    else:
+        current_right_image = None
+        random_image = None
+
+
+    return render_template('releasedate.html', current_right_image=current_right_image, random_image=random_image)
+
+@app.route('/runtime')
+def runtime():
+    mov = Movies.query.all()
+    
+    return render_template('runtime.html', mov=mov)
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------<>
 #Sonstigens
 @app.route('/') 
 @login_required
 def home():
+    
     current_language = get_locale()
     languages = app.config['LANGUAGES']
     return render_template('home.html', languages=languages, current_language=current_language)
@@ -108,17 +152,6 @@ def quellen():
 @login_required
 def impressum():
     return render_template('impressum.html')
-
-<<<<<<< Updated upstream
-@app.route('/releasedate')
-def releasedate():
-    return render_template('releasedate.html')
-
-@app.route('/runtime')
-def runtime():
-    mov = Movies.query.all()
-    
-    return render_template('runtime.html', mov=mov)
 
 @app.route('/discord')
 def discord():
@@ -156,13 +189,8 @@ def toggle_dark_mode():
 def set_language(lang_code):
     session['language'] = lang_code
     return redirect(request.referrer or url_for('home'))
-=======
-@app.route('/register')
-def register():
-    form = RegisterForm()
-    return render_template('register.html', form=form)
->>>>>>> Stashed changes
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------<>
 # Config for CRUD
 @app.route('/update/<int:movie_id>', methods=['GET', 'POST'])
 @login_required

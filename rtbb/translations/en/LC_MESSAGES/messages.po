@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-30 07:22+0200\n"
+"POT-Creation-Date: 2023-07-05 13:28+0200\n"
 "PO-Revision-Date: 2023-06-24 19:10+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,113 +18,113 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: forms.py:8 forms.py:14
+#: forms.py:12 forms.py:25
 msgid "Username"
 msgstr "Username"
 
-#: forms.py:9 forms.py:15
+#: forms.py:13 forms.py:26
 #, fuzzy
 msgid "Password"
 msgstr "Password"
 
-#: forms.py:13 forms.py:27
+#: forms.py:24 forms.py:38
 msgid "E-Mail"
 msgstr "Email"
 
-#: forms.py:16
+#: forms.py:27
 #, fuzzy
 msgid "Confirm Password"
 msgstr "Confirm Password"
 
-#: forms.py:24
+#: forms.py:35
 msgid "Username or E-Mail already exists. Please choose a different one"
 msgstr "Username or E-Mail already exists. Please choose a different one"
 
-#: forms.py:28
+#: forms.py:39
 #, fuzzy
 msgid "New password"
 msgstr "New password"
 
-#: forms.py:29
+#: forms.py:40
 msgid "Confirm new password"
 msgstr "Confirm new password"
 
-#: forms.py:30
+#: forms.py:41
 msgid "Confirm"
 msgstr "Confirm"
 
-#: forms.py:33
+#: forms.py:44
 #, fuzzy
 msgid "Title"
 msgstr "Title"
 
-#: forms.py:34
+#: forms.py:45
 #, fuzzy
 msgid "Director"
 msgstr "Director"
 
-#: forms.py:35
+#: forms.py:46
 #, fuzzy
 msgid "Duration"
 msgstr "Duration"
 
-#: forms.py:36
+#: forms.py:47
 #, fuzzy
 msgid "Description"
 msgstr "Description"
 
-#: forms.py:37
+#: forms.py:48
 msgid "Submit"
 msgstr "Submit"
 
-#: forms.py:40
+#: forms.py:51
 #, fuzzy
 msgid "Title:"
 msgstr "Title:"
 
-#: forms.py:41
+#: forms.py:52
 #, fuzzy
 msgid "Director:"
 msgstr "Director:"
 
-#: forms.py:42
+#: forms.py:53
 msgid "Duration(in Minutes):"
 msgstr "Duration(in Minutes):"
 
-#: forms.py:43
+#: forms.py:54
 #, fuzzy
 msgid "Description:"
 msgstr "Description:"
 
-#: forms.py:44
+#: forms.py:55
 msgid "Edit"
 msgstr "Edit"
 
-#: forms.py:47
+#: forms.py:58
 msgid "Delete"
 msgstr "Delete"
 
-#: routes.py:38
+#: routes.py:44
 msgid "Failed to login"
 msgstr "Failed to login"
 
-#: routes.py:62
+#: routes.py:68
 msgid "User created successfully!"
 msgstr "User created successfully!"
 
-#: routes.py:84
+#: routes.py:90
 msgid "Failed to update password"
 msgstr "Failed to update password!"
 
-#: routes.py:133
+#: routes.py:180
 msgid "Movie updated successfully!"
 msgstr "Movie updated successfully!"
 
-#: routes.py:155
+#: routes.py:202
 msgid "Movie added successfully!"
 msgstr "Movie added successfully!"
 
-#: routes.py:173
+#: routes.py:220
 msgid "Movie deleted successfully!"
 msgstr "Movie deleted successfully!"
 
@@ -165,11 +165,7 @@ msgstr "Return to "
 msgid "signIn"
 msgstr "Sign in"
 
-#: templates/home.html:4
-msgid "welcome"
-msgstr ""
-
-#: templates/impressum.html:6 templates/layout.html:40
+#: templates/impressum.html:6 templates/layout.html:41
 msgid "about"
 msgstr "About"
 
@@ -326,54 +322,45 @@ msgstr ""
 "the extent possible. Further information on the handling of personal data"
 " can be found in our privacy policy."
 
-#: templates/layout.html:27
+#: templates/layout.html:28
 msgid "home"
 msgstr "Home"
 
-#: templates/layout.html:30
+#: templates/layout.html:31
 msgid "adminTools"
 msgstr "Admin Tools"
 
-#: templates/layout.html:34
+#: templates/layout.html:35
 msgid "moreInfo"
 msgstr "More Infos"
 
-#: templates/layout.html:37
+#: templates/layout.html:38
 msgid "sources"
 msgstr "Sources"
 
-#: templates/layout.html:38
+#: templates/layout.html:39
 msgid "appExtra"
 msgstr "Extra"
 
-#: templates/layout.html:50
+#: templates/layout.html:51
 msgid "userPresentation"
 msgstr "Logged as: "
 
-#: templates/login.html:12
+#: templates/login.html:13
 msgid "loginTitle"
 msgstr "Login"
 
-#: templates/login.html:21
+#: templates/login.html:42
 msgid "forgotPassword"
 msgstr "Forgot your password?"
 
-#: templates/login.html:28
+#: templates/login.html:49
 msgid "noAcc"
 msgstr "You don't have an account?"
 
-#: templates/login.html:29 templates/register.html:23
+#: templates/login.html:50
 msgid "createAcc"
 msgstr "Create account"
-
-#: templates/register.html:11
-msgid "registerTitle"
-msgstr "Create new account"
-
-#: templates/register.html:22
-#, fuzzy
-msgid "alreadyLogin"
-msgstr "Already have an account?"
 
 #: templates/update.html:9
 msgid "updateTitle"
@@ -384,4 +371,13 @@ msgstr "Update Movie"
 
 #~ msgid "crudTitel"
 #~ msgstr "Update Movie"
+
+#~ msgid "welcome"
+#~ msgstr ""
+
+#~ msgid "registerTitle"
+#~ msgstr "Create new account"
+
+#~ msgid "alreadyLogin"
+#~ msgstr "Already have an account?"
 

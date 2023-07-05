@@ -1,12 +1,8 @@
 from flask_babel import gettext, lazy_gettext
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, IntegerField, TextAreaField, EmailField
-<<<<<<< Updated upstream
 from wtforms.validators import DataRequired, Length, ValidationError
 from rtbb.models import Login
-=======
-from wtforms.validators import DataRequired
->>>>>>> Stashed changes
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()], render_kw={"placeholder": lazy_gettext("Username")})

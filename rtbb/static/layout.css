@@ -115,6 +115,26 @@ body{
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 /* Game Styles */
 
+.containerGame {
+  text-align: center;
+}
+
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container img {
+  max-width: 40%;
+  height: auto;
+  margin: 10px;
+}
+
+.vs-text {
+  font-size: 24px;
+  font-weight: bold;
+}
 
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 /* CRUD Styles */

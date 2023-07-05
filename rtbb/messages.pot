@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-30 07:22+0200\n"
+"POT-Creation-Date: 2023-07-05 13:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,103 +17,103 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: forms.py:8 forms.py:14
+#: forms.py:12 forms.py:25
 msgid "Username"
 msgstr ""
 
-#: forms.py:9 forms.py:15
+#: forms.py:13 forms.py:26
 msgid "Password"
 msgstr ""
 
-#: forms.py:13 forms.py:27
+#: forms.py:24 forms.py:38
 msgid "E-Mail"
 msgstr ""
 
-#: forms.py:16
+#: forms.py:27
 msgid "Confirm Password"
 msgstr ""
 
-#: forms.py:24
+#: forms.py:35
 msgid "Username or E-Mail already exists. Please choose a different one"
 msgstr ""
 
-#: forms.py:28
+#: forms.py:39
 msgid "New password"
 msgstr ""
 
-#: forms.py:29
+#: forms.py:40
 msgid "Confirm new password"
 msgstr ""
 
-#: forms.py:30
+#: forms.py:41
 msgid "Confirm"
 msgstr ""
 
-#: forms.py:33
+#: forms.py:44
 msgid "Title"
 msgstr ""
 
-#: forms.py:34
+#: forms.py:45
 msgid "Director"
 msgstr ""
 
-#: forms.py:35
+#: forms.py:46
 msgid "Duration"
 msgstr ""
 
-#: forms.py:36
+#: forms.py:47
 msgid "Description"
 msgstr ""
 
-#: forms.py:37
+#: forms.py:48
 msgid "Submit"
 msgstr ""
 
-#: forms.py:40
+#: forms.py:51
 msgid "Title:"
 msgstr ""
 
-#: forms.py:41
+#: forms.py:52
 msgid "Director:"
 msgstr ""
 
-#: forms.py:42
+#: forms.py:53
 msgid "Duration(in Minutes):"
 msgstr ""
 
-#: forms.py:43
+#: forms.py:54
 msgid "Description:"
 msgstr ""
 
-#: forms.py:44
+#: forms.py:55
 msgid "Edit"
 msgstr ""
 
-#: forms.py:47
+#: forms.py:58
 msgid "Delete"
 msgstr ""
 
-#: routes.py:38
+#: routes.py:44
 msgid "Failed to login"
 msgstr ""
 
-#: routes.py:62
+#: routes.py:68
 msgid "User created successfully!"
 msgstr ""
 
-#: routes.py:84
+#: routes.py:90
 msgid "Failed to update password"
 msgstr ""
 
-#: routes.py:133
+#: routes.py:180
 msgid "Movie updated successfully!"
 msgstr ""
 
-#: routes.py:155
+#: routes.py:202
 msgid "Movie added successfully!"
 msgstr ""
 
-#: routes.py:173
+#: routes.py:220
 msgid "Movie deleted successfully!"
 msgstr ""
 
@@ -153,11 +153,7 @@ msgstr ""
 msgid "signIn"
 msgstr ""
 
-#: templates/home.html:4
-msgid "welcome"
-msgstr ""
-
-#: templates/impressum.html:6 templates/layout.html:40
+#: templates/impressum.html:6 templates/layout.html:41
 msgid "about"
 msgstr ""
 
@@ -277,52 +273,44 @@ msgstr ""
 msgid "DatenschutzText"
 msgstr ""
 
-#: templates/layout.html:27
+#: templates/layout.html:28
 msgid "home"
 msgstr ""
 
-#: templates/layout.html:30
+#: templates/layout.html:31
 msgid "adminTools"
 msgstr ""
 
-#: templates/layout.html:34
+#: templates/layout.html:35
 msgid "moreInfo"
 msgstr ""
 
-#: templates/layout.html:37
+#: templates/layout.html:38
 msgid "sources"
 msgstr ""
 
-#: templates/layout.html:38
+#: templates/layout.html:39
 msgid "appExtra"
 msgstr ""
 
-#: templates/layout.html:50
+#: templates/layout.html:51
 msgid "userPresentation"
 msgstr ""
 
-#: templates/login.html:12
+#: templates/login.html:13
 msgid "loginTitle"
 msgstr ""
 
-#: templates/login.html:21
+#: templates/login.html:42
 msgid "forgotPassword"
 msgstr ""
 
-#: templates/login.html:28
+#: templates/login.html:49
 msgid "noAcc"
 msgstr ""
 
-#: templates/login.html:29 templates/register.html:23
+#: templates/login.html:50
 msgid "createAcc"
-msgstr ""
-
-#: templates/register.html:11
-msgid "registerTitle"
-msgstr ""
-
-#: templates/register.html:22
-msgid "alreadyLogin"
 msgstr ""
 
 #: templates/update.html:9
