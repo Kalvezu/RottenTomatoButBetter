@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="{% if dark_mode %}dark-mode layer1{% else %}bg-light{% endif %}">
-        <div class="{% if dark_mode %}dark-mode skew-c-dm{% else %}skew-c-dm{% endif %}"></div>
+        <div class="{% if dark_mode %}dark-mode skew-c-dm{% else %}dark-mode skew-c{% endif %}"></div>
         <div class="row {% if dark_mode %}dark-mode colour-block-dm{% else %}colour-block{% endif %}">
             <div class="col m-5">
                 <a class="card-text" href="{{ url_for('runtime') }}">
@@ -39,8 +39,8 @@
             </div>
         </div>
     
-        <div class="{% if dark_mode %}dark-mode skew-cc-dm{% else %}skew-cc-dm{% endif %}"></div>
-        <div class="row mo-auto w-50 {% if dark_mode %}dark-mode white-block-dm{% else %}white-block{% endif %}">
+        <div class="{% if dark_mode %}dark-mode skew-cc-dm{% else %}dark-mode skew-cc{% endif %}"></div>
+        <div class="row m-auto w-50 {% if dark_mode %}dark-mode white-block-dm{% else %}white-block{% endif %}">
             <a class="card-text" href="{{ url_for('discord') }}">
                 <div class="card shadow-sm">
                     <img src="{{ url_for('static', filename='new.jpg') }}" alt="test" class="card-img-top">
@@ -59,7 +59,7 @@
         </div>
 
         <!-- Carousel -->
-        <div class="{% if dark_mode %}dark-mode skew-c-dm{% else %}skew-c-dm{% endif %}"></div>
+        <div class="{% if dark_mode %}dark-mode skew-c-dm{% else %}dark-mode skew-c{% endif %}"></div>
         <div id="carouselRide" class="carousel slide {% if dark_mode %}dark-mode colour-block-dm{% else %}colour-block{% endif %}" data-bs-pause="False" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselRide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 
+<<<<<<< Updated upstream
     <div class="d-flex justify-content-center pt-5 vh-100 {% if dark_mode %}dark-mode layer0{% else %}bg-light{% endif %}">
         <div class="w-25">
             <form method="POST" action="" class="d-flex flex-column align-items-center borderControll rounded-4 p-5 {% if dark_mode %}dark-mode layer2 font9{% else %}bg-white{% endif %}">
@@ -28,3 +29,27 @@
     </div>
 
 {% endblock %}
+=======
+    <div class="container">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+
+            {{ form.username.label(class="") }}
+            {{ form.username (class="")}}
+
+            {{ form.email.label(class="") }}
+            {{ form.email (class="")}}
+
+            {{ form.password.label(class="")}}
+            {{ form.password(class="")}}
+
+            {{ form.confirmPassword.label(class="")}}
+            {{ form.confirmPassword(class="")}}
+            
+            {{ form.registerSubmit }}
+
+        </form>        
+    </div>
+
+{% endblock %}
+>>>>>>> Stashed changes

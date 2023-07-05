@@ -1,4 +1,43 @@
 {% extends "layout.html" %}
 {% block content %}
 
+<style type="text/css">
+
+    .bgimg1{
+        background-image: url('static/image1.jpg');
+    }
+
+    .bgimg2{
+        background-image: url('static/image2.jpg');
+    }
+
+</style>
+
+    <div class="container">
+
+        {% i = 0 %}
+        {%for movie in mov %}
+        {% i++ %}
+
+        <div class="row">
+
+            <div class="col-5 bgimg1">
+                
+            </div>
+
+            <div class="col">
+                <p class="m-5 p-3">VS.</p>
+            </div>
+
+            <div class="col-5 bgimg2 border-end d-flex justify-content-center align-items-center">
+                <div class="text-center d-flex flex-column">
+                    <button class="mb-3 btn btn-primary text">Higher</button>
+                    <button class="btn btn-primary text">Lower</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</html>
+
 {% endblock %}

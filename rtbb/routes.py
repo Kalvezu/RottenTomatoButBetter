@@ -1,8 +1,14 @@
+<<<<<<< Updated upstream
 from rtbb import app, db, get_locale
 from flask import render_template, flash, redirect, url_for, request, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from rtbb.forms import LoginForm, movieForm, deleteMovie, updateForm, registerForm, forgotPasswordForm
 from flask_login import login_user, LoginManager, login_required, logout_user
+=======
+from rtbb import app, db
+from flask import render_template, flash, redirect, url_for, request
+from rtbb.forms import LoginForm, movieForm, deleteMovie, updateForm, RegisterForm
+>>>>>>> Stashed changes
 from rtbb.models import Login, Movies
 from flask_babel import gettext
 
@@ -103,13 +109,16 @@ def quellen():
 def impressum():
     return render_template('impressum.html')
 
+<<<<<<< Updated upstream
 @app.route('/releasedate')
 def releasedate():
     return render_template('releasedate.html')
 
 @app.route('/runtime')
 def runtime():
-    return render_template('runtime.html')
+    mov = Movies.query.all()
+    
+    return render_template('runtime.html', mov=mov)
 
 @app.route('/discord')
 def discord():
@@ -147,6 +156,12 @@ def toggle_dark_mode():
 def set_language(lang_code):
     session['language'] = lang_code
     return redirect(request.referrer or url_for('home'))
+=======
+@app.route('/register')
+def register():
+    form = RegisterForm()
+    return render_template('register.html', form=form)
+>>>>>>> Stashed changes
 
 # Config for CRUD
 @app.route('/update/<int:movie_id>', methods=['GET', 'POST'])
