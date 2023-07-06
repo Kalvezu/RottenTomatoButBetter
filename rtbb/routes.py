@@ -166,9 +166,72 @@ def releasedate():
 
 @app.route('/runtime')
 def runtime():
-    mov = Movies.query.all()
+    image_files = os.listdir(image_folder)
     
-    return render_template('runtime.html', mov=mov)
+    if image_files:
+        current_right_image = random.choice(image_files)
+        image_files.remove(current_right_image)
+        random_image = random.choice(image_files)
+
+        right_image = Movies.query.filter_by(photoname = current_right_image).first_or_404()
+        left_image = Movies.query.filter_by(photoname = random_image).first_or_404()
+        titleleft = left_image.title
+        titleright = right_image.title
+    else:
+        current_right_image = None
+        random_image = None
+
+
+    return render_template('runtime.html', current_right_image=current_right_image, random_image=random_image, titleleft = titleleft, titleright = titleright )
+
+@app.route('/compare_images_duration', methods=['POST'])
+def compare_images_duration():
+    choice = request.form.get('choice')
+    current_right_image = request.args.get('current_right_image')
+    random_image = request.args.get('random_image')
+    image_files = os.listdir(image_folder)
+
+    right_image = Movies.query.filter_by(photoname = current_right_image).first_or_404()
+    left_image = Movies.query.filter_by(photoname = random_image).first_or_404()
+
+    durationOne = right_image.duration
+    durationTwo = left_image.duration
+    titleleft = left_image.title
+    titleright = right_image.title
+
+    counter = 0
+    if choice == 'higher':
+        if(durationOne >= durationTwo):
+            counter += 1
+            # new_current_right_image = random_image
+            image_files.remove(random_image)
+            random_image = current_right_image
+            current_right_image = random.choice(image_files)
+            right_image = Movies.query.filter_by(photoname = current_right_image).first_or_404()
+            left_image = Movies.query.filter_by(photoname = random_image).first_or_404()
+            titleleft = left_image.title
+            titleright = right_image.title
+            print("test1")
+        else:
+            return render_template('verloren.html')
+    elif choice == 'lower':
+        if(durationOne <= durationTwo):
+            counter += 1
+            # new_current_right_image = random_image
+            image_files.remove(random_image)
+            random_image = current_right_image
+            current_right_image = random.choice(image_files)
+            right_image = Movies.query.filter_by(photoname = current_right_image).first_or_404()
+            left_image = Movies.query.filter_by(photoname = random_image).first_or_404()
+            titleleft = left_image.title
+            titleright = right_image.title
+            print("test12")
+        else:
+            return render_template('verloren.html')
+    else:
+        print("test")
+
+    return render_template('runtime.html', current_right_image= current_right_image, random_image=random_image, titleleft = titleleft, titleright = titleright )
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------<>
 #Sonstigens

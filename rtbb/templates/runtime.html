@@ -1,38 +1,64 @@
 {% extends "layout.html" %}
 {% block content %}
-
 <style type="text/css">
 
     .bgimg1{
-        background-image: url('static/image1.jpg');
+        background-image: url("{{ url_for('static', filename='covers/' + random_image) }}");
+        width: 500px;
+        height: 800px;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .bgimg2{
-        background-image: url('static/image2.jpg');
+        background-image: url("{{ url_for('static', filename='covers/' + current_right_image) }}");
+        width: 500px;
+        height: 800px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .bgimg3{
+        background-image: url('static/vs.jpg');
+        max-width: 80%;
+        max-height: 1%;
+        
+        background-repeat: no-repeat;
+    }
+
+    .blurr{
+
+        background-color: rgba(0,0,0, 0.7);
+    }
+    .blurr2{
+
+        background-color: rgba(0,0,0, 0.7);
+    }
+    .item{
+
+        flex-shrink: 3;
     }
 
 </style>
-
-    <div class="container">
-        <div class="row">
-
-            <div class="col-5 bgimg1">
-                
-            </div>
-
-            <div class="col">
-                <p class="m-5 p-3">VS.</p>
-            </div>
-
-            <div class="col-5 bgimg2 border-end d-flex justify-content-center align-items-center">
-                <div class="text-center d-flex flex-column">
-                    <button class="mb-3 btn btn-primary text">Higher</button>
-                    <button class="btn btn-primary text">Lower</button>
+<div class="container">
+    <div class="row">
+        <h1 class="mb-5 text-center fw-bold">Higher Lower - Released Date Version</h1>
+        <div class="col-5 bgimg1 border-end d-flex flex-column justify-content-center align-items-center">
+            <h2 class="p-2 border blurr mb-5 text-white">{{ titleleft }}</h2>
+        </div>
+        <div class="col bgimg3">
+            
+        </div>
+        <div class="col-5 bgimg2 border-end d-flex flex-column justify-content-center align-items-center">
+            <div>
+                <h2 class="p-2 border blurr mb-5 text-white">{{ titleright }}</h2>  
+                </div class="text-center d-flex flex-column item">
+                    <form method="POST" action="{{ url_for('compare_images_duration', current_right_image=current_right_image, random_image=random_image) }}">
+                        <button class="blurr btn btn-outline-light fw-bold" type="submit" name="choice" value="higher">Higher</button>
+                        <button class="blurr btn btn-outline-light fw-bold"type="submit" name="choice" value="lower">Lower</button>
+                    </form>
                 </div>
-            </div>
-
         </div>
     </div>
-</html>
+</div>
 
 {% endblock %}
