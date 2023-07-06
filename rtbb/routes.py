@@ -93,27 +93,43 @@ def forgotPassword():
 #Game
 @app.route('/compare_images', methods=['POST'])
 def compare_images():
+    
+    movie = Movies.query.get_or_404()
+    
     choice = request.form.get('choice')
     current_right_image = request.args.get('current_right_image')
     random_image = request.args.get('random_image')
     image_files = os.listdir(image_folder)
+
+    RightImage = Movies.query.filter_by(photoname = current_right_image).first()
+    print('5', RightImage)
+    durationOne = RightImage.duration
+    print('6', durationOne)
     
+    LeftImage = Movies.query.filter_by(photoname = current_right_image).first()
+    durationTwo = LeftImage.duration.data
+    counter = 0
     if choice == 'higher':
-        new_current_right_image = random_image
-        image_files.remove(new_current_right_image)
-        new_random_image = random.choice(image_files)
+        if(durationOne >= durationTwo):
+            counter += 1
+            new_current_right_image = random_image
+            image_files.remove(new_current_right_image)
+            new_random_image = random.choice(image_files)
     elif choice == 'lower':
-        new_random_image = random_image
-        image_files.remove(new_random_image)
-        new_current_right_image = random.choice(image_files)
+        if(durationOne <= durationTwo):
+            counter += 1
+            new_random_image = random_image
+            image_files.remove(new_random_image)
+            new_current_right_image = random.choice(image_files)
     else:
         new_current_right_image = current_right_image
         new_random_image = random_image
-    
-    return render_template('releasedate.html', current_right_image=new_current_right_image, random_image=new_random_image)
+
+    return render_template('releasedate.html', current_right_image=new_current_right_image, random_image=new_random_image, movie=movie)
 
 @app.route('/releasedate')
 def releasedate():
+    
     image_files = os.listdir(image_folder)
     
     if image_files:

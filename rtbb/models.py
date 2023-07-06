@@ -15,4 +15,6 @@ class Movies(db.Model):
     director = db.Column(db.String(50), nullable=False)
     duration = db.Column(db.Integer, nullable=False)
     description = db.Column(db.Text, nullable=False)
+    realeasedate = db.Column(db.DateTime, nullable=False)
+    photoname = db.Column(db.String(50), nullable=False)
     added_on = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)

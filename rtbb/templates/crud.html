@@ -16,6 +16,7 @@
                     <th scope="col">{{ _('movieTitle') }}</th>
                     <th scope="col">{{ _('movieDirector') }}</th>
                     <th scope="col">{{ _('movieDuration') }}</th>
+                    <th scope="col">{{ _('releasedate') }}</th>
                     <th scope="col">{{ _('movieDescription') }}</th>
                     <th colspan="2" scope="col">{{ _('action') }}</th>
                 </tr>
@@ -27,6 +28,7 @@
                     <td>{{ movie.title }}</td>
                     <td>{{ movie.director }}</td>
                     <td>{{ movie.duration }} mins.</td>
+                    <td>{{ movie.realeasedate.strftime('%d.%m.%Y') }}</td>
                     <td>{{ movie.description }}</td>
                     <td class="noWarpCrud">
                         <a href="{{ url_for('update', movie_id=movie.id) }}" class="bg-warning crudBtn text-dark " data-movie-id="{{ movie.id }}">
