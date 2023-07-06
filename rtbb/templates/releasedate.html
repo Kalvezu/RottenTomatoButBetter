@@ -39,9 +39,9 @@
     }
 
 </style>
-<div class="container">
+<div class="container {% if dark_mode %}dark-mode layer0{% endif %}">
     <div class="row">
-        <h1 class="mb-5 text-center fw-bold">Higher Lower - Released Date Version</h1>
+        <h1 class="mb-5 text-center fw-bold {% if dark_mode %}dark-mode fontDM{% endif %}">Higher Lower - Released Date Version</h1>
         <div class="col-5 bgimg1 border-end d-flex flex-column justify-content-center align-items-center">
             <h2 class="p-2 border blurr mb-5 text-white">{{ titleleft }}</h2>
         </div>

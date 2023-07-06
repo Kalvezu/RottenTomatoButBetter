@@ -133,12 +133,13 @@ body{
  width: 100%;
 }
 
-.verloren a{
+.aaa{
   position: absolute;
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0;

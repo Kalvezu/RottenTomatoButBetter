@@ -136,11 +136,11 @@ def compare_images():
             titleright = right_image.title
             print("test12")
         else:
-            return render_template('verloren.html')
+            return render_template('verloren.html', counter=counter)
     else:
         print("test")
 
-    return render_template('releasedate.html', current_right_image= current_right_image, random_image=random_image, titleleft = titleleft, titleright = titleright )
+    return render_template('releasedate.html', current_right_image= current_right_image, random_image=random_image, titleleft = titleleft, titleright = titleright,)
 
 @app.route('/releasedate')
 def releasedate():
@@ -227,11 +227,11 @@ def compare_images_duration():
             titleright = right_image.title
             print("test12")
         else:
-            return render_template('verloren.html')
+            return render_template('verloren.html', counter=counter)
     else:
         print("test")
 
-    return render_template('runtime.html', current_right_image= current_right_image, random_image=random_image, titleleft = titleleft, titleright = titleright )
+    return render_template('runtime.html', current_right_image= current_right_image, random_image=random_image, titleleft = titleleft, titleright = titleright)
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------<>
 #Sonstigens

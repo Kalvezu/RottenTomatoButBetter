@@ -95,11 +95,11 @@
         </div>
       </nav>
     </header>
-      <div class="d-flex flex-column vh-100">
+      <div class="d-flex flex-column vh-100 {% if dark_mode %}dark-mode layer0{% endif %}">
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
             {% for category, message in messages %}
-              <div class="alert alert-{{ category }} {% if dark_mode %}dark-mode layer1{% endif %}">
+              <div class="alert alert-{{ category }}">
                 {{ message }}
               </div>
             {% endfor %}

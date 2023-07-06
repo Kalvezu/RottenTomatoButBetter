@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-06 18:14+0200\n"
+"POT-Creation-Date: 2023-07-06 18:37+0200\n"
 "PO-Revision-Date: 2023-06-24 19:10+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -126,15 +126,15 @@ msgstr "Usuário criado com sucesso!"
 msgid "Failed to update password"
 msgstr "Falha ao atualizar senha!"
 
-#: routes.py:228
+#: routes.py:313
 msgid "Movie updated successfully!"
 msgstr "Filme atualizado com sucesso!"
 
-#: routes.py:250
+#: routes.py:335
 msgid "Movie added successfully!"
 msgstr "Filme adicionado com sucesso!"
 
-#: routes.py:268
+#: routes.py:353
 msgid "Movie deleted successfully!"
 msgstr "Filme deletado com sucesso!"
 
@@ -411,18 +411,6 @@ msgstr "Registrar uma nova conta"
 msgid "alreadyLogin"
 msgstr "Ja tem uma conta?"
 
-#: templates/releasedate.html:6
-msgid "releasedateHL"
-msgstr "Data de lançamento"
-
-#: templates/releasedate.html:14
-msgid "higher"
-msgstr "Mais"
-
-#: templates/releasedate.html:15
-msgid "lower"
-msgstr "Menos"
-
 #: templates/update.html:9
 msgid "updateTitle"
 msgstr "Atualizar Filme"
@@ -445,4 +433,13 @@ msgstr "Jogar novamente?"
 
 #~ msgid "alreadyLogin"
 #~ msgstr "Já tem uma conta?"
+
+#~ msgid "releasedateHL"
+#~ msgstr "Data de lançamento"
+
+#~ msgid "higher"
+#~ msgstr "Mais"
+
+#~ msgid "lower"
+#~ msgstr "Menos"
 
