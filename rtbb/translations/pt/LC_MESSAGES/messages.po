@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-05 13:28+0200\n"
+"POT-Creation-Date: 2023-07-06 18:14+0200\n"
 "PO-Revision-Date: 2023-06-24 19:10+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -18,91 +18,101 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: forms.py:12 forms.py:25
+#: forms.py:8 forms.py:21
 msgid "Username"
 msgstr "Usuário"
 
-#: forms.py:13 forms.py:26
+#: forms.py:9 forms.py:22
 #, fuzzy
 msgid "Password"
 msgstr "Senha"
 
-#: forms.py:24 forms.py:38
+#: forms.py:20 forms.py:34
 msgid "E-Mail"
 msgstr "Email"
 
-#: forms.py:27
+#: forms.py:23
 #, fuzzy
 msgid "Confirm Password"
 msgstr "Confirme a senha"
 
-#: forms.py:35
+#: forms.py:24 templates/impressum.html:34
+#, fuzzy
+msgid "register"
+msgstr "Registro:"
+
+#: forms.py:31
 msgid "Username or E-Mail already exists. Please choose a different one"
 msgstr "Usuário or email já cadastrado. Por favor, escolha outro."
 
-#: forms.py:39
+#: forms.py:35
 #, fuzzy
 msgid "New password"
 msgstr "Nova senha"
 
-#: forms.py:40
+#: forms.py:36
 msgid "Confirm new password"
 msgstr "Repita a nova senha"
 
-#: forms.py:41
+#: forms.py:37
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: forms.py:44
+#: forms.py:40
 #, fuzzy
 msgid "Title"
 msgstr "Título"
 
-#: forms.py:45
+#: forms.py:41
 #, fuzzy
 msgid "Director"
 msgstr "Diretor"
 
-#: forms.py:46
+#: forms.py:42
 #, fuzzy
 msgid "Duration"
 msgstr "Duração"
 
-#: forms.py:47
+#: forms.py:43
 #, fuzzy
 msgid "Description"
 msgstr "Descrição"
 
-#: forms.py:48
+#: forms.py:44
 msgid "Submit"
 msgstr "Enviar"
 
-#: forms.py:51
+#: forms.py:47
 #, fuzzy
 msgid "Title:"
 msgstr "Título:"
 
-#: forms.py:52
+#: forms.py:48
 #, fuzzy
 msgid "Director:"
 msgstr "Diretor:"
 
-#: forms.py:53
+#: forms.py:49
 msgid "Duration(in Minutes):"
 msgstr "Duração(em minutos):"
 
-#: forms.py:54
+#: forms.py:50
 #, fuzzy
 msgid "Description:"
 msgstr "Descrição:"
 
-#: forms.py:55
+#: forms.py:51
 msgid "Edit"
 msgstr "Editar"
 
-#: forms.py:58
+#: forms.py:54
 msgid "Delete"
 msgstr "Deletar"
+
+#: routes.py:16
+#, fuzzy
+msgid "loginError"
+msgstr "O usuário precisa estar conectado para visualizar esta página!"
 
 #: routes.py:44
 msgid "Failed to login"
@@ -116,15 +126,15 @@ msgstr "Usuário criado com sucesso!"
 msgid "Failed to update password"
 msgstr "Falha ao atualizar senha!"
 
-#: routes.py:180
+#: routes.py:228
 msgid "Movie updated successfully!"
 msgstr "Filme atualizado com sucesso!"
 
-#: routes.py:202
+#: routes.py:250
 msgid "Movie added successfully!"
 msgstr "Filme adicionado com sucesso!"
 
-#: routes.py:220
+#: routes.py:268
 msgid "Movie deleted successfully!"
 msgstr "Filme deletado com sucesso!"
 
@@ -145,10 +155,14 @@ msgid "movieDuration"
 msgstr "Duração"
 
 #: templates/crud.html:19
+msgid "releasedate"
+msgstr ""
+
+#: templates/crud.html:20
 msgid "movieDescription"
 msgstr "Descrição"
 
-#: templates/crud.html:20
+#: templates/crud.html:21
 #, fuzzy
 msgid "action"
 msgstr "Duração"
@@ -164,6 +178,37 @@ msgstr "Retornar ao "
 #: templates/forgotPassword.html:22
 msgid "signIn"
 msgstr "Acessar"
+
+#: templates/home.html:12
+#, fuzzy
+msgid "releasedataGamePresentation"
+msgstr ""
+"O Release Date Riddles é um modo de jogo que desafia seu conhecimento "
+"sobre filmes ao adivinhar as datas de lançamento. Teste sua intuição e "
+"determine quando cada filme foi lançado. Use pistas e dicas para refinar "
+"suas previsões, ganhar pontos e subir na tabela de classificação. Mostre "
+"seus conhecimentos sobre filmes e curta a emoção de decifrar as datas de "
+"lançamento! "
+
+#: templates/home.html:29
+#, fuzzy
+msgid "durationGamePresentation"
+msgstr ""
+"Guess the Duration é um modo de jogo cativante que combina "
+"entretenimento, conhecimento e estratégia. É hora de mostrar sua "
+"experiência cinematográfica e ocupar seu lugar entre os conhecedores de "
+"filmes. Prepare-se para mergulhar no mundo encantador dos filmes e deixe "
+"a adivinhação começar! "
+
+#: templates/home.html:49
+msgid "Currently working on bigger and better game modes for you"
+msgstr ""
+"No momento, estamos trabalhando em modos de jogo maiores e melhores para "
+"você"
+
+#: templates/home.html:53
+msgid "Join our Discord if you want to see new updates."
+msgstr "Participe de nosso Discord se quiser ver novas atualizações."
 
 #: templates/impressum.html:6 templates/layout.html:41
 msgid "about"
@@ -231,11 +276,6 @@ msgstr "Representante de comunicação"
 #: templates/impressum.html:32
 msgid "registerAndRegisterNumber"
 msgstr "Registro e número do registro:"
-
-#: templates/impressum.html:34
-#, fuzzy
-msgid "register"
-msgstr "Registro:"
 
 #: templates/impressum.html:35
 #, fuzzy
@@ -345,25 +385,51 @@ msgstr "Extra"
 msgid "userPresentation"
 msgstr "Logado as: "
 
-#: templates/login.html:13
+#: templates/login.html:12
 msgid "loginTitle"
 msgstr "Login"
 
-#: templates/login.html:42
+#: templates/login.html:21
 msgid "forgotPassword"
 msgstr "Esqueceu a senha?"
 
-#: templates/login.html:49
+#: templates/login.html:28
 msgid "noAcc"
 msgstr "Não tem uma conta?"
 
-#: templates/login.html:50
+#: templates/login.html:29 templates/register.html:23
 msgid "createAcc"
 msgstr "Criar conta"
+
+#: templates/register.html:11
+#, fuzzy
+msgid "registerTitle"
+msgstr "Registrar uma nova conta"
+
+#: templates/register.html:22
+#, fuzzy
+msgid "alreadyLogin"
+msgstr "Ja tem uma conta?"
+
+#: templates/releasedate.html:6
+msgid "releasedateHL"
+msgstr "Data de lançamento"
+
+#: templates/releasedate.html:14
+msgid "higher"
+msgstr "Mais"
+
+#: templates/releasedate.html:15
+msgid "lower"
+msgstr "Menos"
 
 #: templates/update.html:9
 msgid "updateTitle"
 msgstr "Atualizar Filme"
+
+#: templates/verloren.html:9
+msgid "playAgain"
+msgstr "Jogar novamente?"
 
 #~ msgid "Hello"
 #~ msgstr ""

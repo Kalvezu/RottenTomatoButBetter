@@ -21,7 +21,7 @@ class registerForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=5, max=20)], render_kw={"placeholder": lazy_gettext("Username")})
     password = PasswordField('Password', validators=[DataRequired(), Length(min=5, max=20)], render_kw={"placeholder": lazy_gettext("Password")})
     confirmPassword = PasswordField('Confirm Password', validators=[DataRequired()], render_kw={"placeholder": lazy_gettext("Confirm Password")})
-    loginSubmit = SubmitField('Login')
+    loginSubmit = SubmitField(lazy_gettext('register'))
 
     def validate_creation(self, username, email):
         existing_user = Login.query.filter_by(username.data).first()

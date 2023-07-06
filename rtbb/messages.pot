@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-05 13:28+0200\n"
+"POT-Creation-Date: 2023-07-06 18:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,80 +17,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: forms.py:12 forms.py:25
+#: forms.py:8 forms.py:21
 msgid "Username"
 msgstr ""
 
-#: forms.py:13 forms.py:26
+#: forms.py:9 forms.py:22
 msgid "Password"
 msgstr ""
 
-#: forms.py:24 forms.py:38
+#: forms.py:20 forms.py:34
 msgid "E-Mail"
 msgstr ""
 
-#: forms.py:27
+#: forms.py:23
 msgid "Confirm Password"
 msgstr ""
 
-#: forms.py:35
+#: forms.py:24 templates/impressum.html:34
+msgid "register"
+msgstr ""
+
+#: forms.py:31
 msgid "Username or E-Mail already exists. Please choose a different one"
 msgstr ""
 
-#: forms.py:39
+#: forms.py:35
 msgid "New password"
 msgstr ""
 
-#: forms.py:40
+#: forms.py:36
 msgid "Confirm new password"
 msgstr ""
 
-#: forms.py:41
+#: forms.py:37
 msgid "Confirm"
 msgstr ""
 
-#: forms.py:44
+#: forms.py:40
 msgid "Title"
 msgstr ""
 
-#: forms.py:45
+#: forms.py:41
 msgid "Director"
 msgstr ""
 
-#: forms.py:46
+#: forms.py:42
 msgid "Duration"
 msgstr ""
 
-#: forms.py:47
+#: forms.py:43
 msgid "Description"
 msgstr ""
 
-#: forms.py:48
+#: forms.py:44
 msgid "Submit"
 msgstr ""
 
-#: forms.py:51
+#: forms.py:47
 msgid "Title:"
 msgstr ""
 
-#: forms.py:52
+#: forms.py:48
 msgid "Director:"
 msgstr ""
 
-#: forms.py:53
+#: forms.py:49
 msgid "Duration(in Minutes):"
 msgstr ""
 
-#: forms.py:54
+#: forms.py:50
 msgid "Description:"
 msgstr ""
 
-#: forms.py:55
+#: forms.py:51
 msgid "Edit"
 msgstr ""
 
-#: forms.py:58
+#: forms.py:54
 msgid "Delete"
+msgstr ""
+
+#: routes.py:16
+msgid "loginError"
 msgstr ""
 
 #: routes.py:44
@@ -105,15 +113,15 @@ msgstr ""
 msgid "Failed to update password"
 msgstr ""
 
-#: routes.py:180
+#: routes.py:228
 msgid "Movie updated successfully!"
 msgstr ""
 
-#: routes.py:202
+#: routes.py:250
 msgid "Movie added successfully!"
 msgstr ""
 
-#: routes.py:220
+#: routes.py:268
 msgid "Movie deleted successfully!"
 msgstr ""
 
@@ -134,10 +142,14 @@ msgid "movieDuration"
 msgstr ""
 
 #: templates/crud.html:19
-msgid "movieDescription"
+msgid "releasedate"
 msgstr ""
 
 #: templates/crud.html:20
+msgid "movieDescription"
+msgstr ""
+
+#: templates/crud.html:21
 msgid "action"
 msgstr ""
 
@@ -151,6 +163,22 @@ msgstr ""
 
 #: templates/forgotPassword.html:22
 msgid "signIn"
+msgstr ""
+
+#: templates/home.html:12
+msgid "releasedataGamePresentation"
+msgstr ""
+
+#: templates/home.html:29
+msgid "durationGamePresentation"
+msgstr ""
+
+#: templates/home.html:49
+msgid "Currently working on bigger and better game modes for you"
+msgstr ""
+
+#: templates/home.html:53
+msgid "Join our Discord if you want to see new updates."
 msgstr ""
 
 #: templates/impressum.html:6 templates/layout.html:41
@@ -211,10 +239,6 @@ msgstr ""
 
 #: templates/impressum.html:32
 msgid "registerAndRegisterNumber"
-msgstr ""
-
-#: templates/impressum.html:34
-msgid "register"
 msgstr ""
 
 #: templates/impressum.html:35
@@ -297,23 +321,47 @@ msgstr ""
 msgid "userPresentation"
 msgstr ""
 
-#: templates/login.html:13
+#: templates/login.html:12
 msgid "loginTitle"
 msgstr ""
 
-#: templates/login.html:42
+#: templates/login.html:21
 msgid "forgotPassword"
 msgstr ""
 
-#: templates/login.html:49
+#: templates/login.html:28
 msgid "noAcc"
 msgstr ""
 
-#: templates/login.html:50
+#: templates/login.html:29 templates/register.html:23
 msgid "createAcc"
+msgstr ""
+
+#: templates/register.html:11
+msgid "registerTitle"
+msgstr ""
+
+#: templates/register.html:22
+msgid "alreadyLogin"
+msgstr ""
+
+#: templates/releasedate.html:6
+msgid "releasedateHL"
+msgstr ""
+
+#: templates/releasedate.html:14
+msgid "higher"
+msgstr ""
+
+#: templates/releasedate.html:15
+msgid "lower"
 msgstr ""
 
 #: templates/update.html:9
 msgid "updateTitle"
+msgstr ""
+
+#: templates/verloren.html:9
+msgid "playAgain"
 msgstr ""
 

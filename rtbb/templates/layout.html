@@ -10,7 +10,7 @@
     <title>RTBB</title>
     <link rel="icon" type="image/x-icon" href="/static/RottenTomatoLogo.ico">
 </head>
-<body {% block bodyClass %}{% endblock %}>>
+<body {% block bodyClass %}{% endblock %}>
     <header>
       <nav class="navbar navbar-expand-lg navSizing {% if dark_mode %}dark-mode layer1 fontDM{% else %}bg-body-tertiary{% endif %}">
         <div class="d-flex align-item-center justify-content-center w-100">
@@ -99,7 +99,7 @@
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
             {% for category, message in messages %}
-              <div class="alert alert-{{ category }}">
+              <div class="alert alert-{{ category }} {% if dark_mode %}dark-mode layer1{% endif %}">
                 {{ message }}
               </div>
             {% endfor %}

@@ -9,7 +9,7 @@
                 <div class="card shadow-sm">
                     <img src="{{ url_for('static', filename='release.png') }}" alt="test" class="card-img-top">
                         <div class="card-body">
-                            <p class="card-text">"Release Date Riddles" is a game mode that challenges your movie knowledge by guessing the release dates. Test your intuition and determine when each movie was released. Use clues and hints to refine your predictions, earn points, and climb the leaderboard. Show off your film expertise and enjoy the thrill of deciphering release dates!</p>
+                            <p class="card-text">{{ _('releasedataGamePresentation') }}</p>
 
                             <hr>
 
@@ -26,7 +26,7 @@
                 <div class="card shadow-sm">
                     <img src="{{ url_for('static', filename='runtime.png') }}" alt="test" class="card-img-top">
                     <div class="card-body">
-                        <p class="card-text">"Guess the Duration" is a captivating game mode that combines entertainment, knowledge, and strategy. It's time to showcase your cinematic expertise and take your place among the film connoisseurs. Get ready to immerse yourself in the enchanting world of movies and let the guessing begin!</p>
+                        <p class="card-text">{{ _('durationGamePresentation') }}</p>
 
                         <hr>
 
@@ -45,11 +45,12 @@
                 <div class="card shadow-sm">
                     <img src="{{ url_for('static', filename='new.jpg') }}" alt="test" class="card-img-top">
                     <div class="card-body">
-                        <strong>Currently working on bigger and better game modes for you</strong>
+                        
+                        <strong>{{ _('Currently working on bigger and better game modes for you') }}</strong>
 
                         <hr>
 
-                        <p>Join our Discord if you want to see new updates.</p>
+                        <p>{{ _('Join our Discord if you want to see new updates.') }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <strong class="text-body-secondary"><u>Discord</u></strong>
                         </div>
