@@ -92,40 +92,33 @@ def forgotPassword():
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------<>
 #Game
 @app.route('/compare_images', methods=['POST'])
-def compare_images():
-    
-    movie = Movies.query.get_or_404()
-    
+def compare_images():    
     choice = request.form.get('choice')
     current_right_image = request.args.get('current_right_image')
     random_image = request.args.get('random_image')
     image_files = os.listdir(image_folder)
 
-    RightImage = Movies.query.filter_by(photoname = current_right_image).first()
-    print('5', RightImage)
+    RightImage = Movies.query.filter_by(photoname = current_right_image).first_or_404()
+    LeftImage = Movies.query.filter_by(photoname = random_image).first_or_404()
+
     durationOne = RightImage.duration
-    print('6', durationOne)
+    durationTwo = LeftImage.duration    
     
-    LeftImage = Movies.query.filter_by(photoname = current_right_image).first()
-    durationTwo = LeftImage.duration.data
     counter = 0
     if choice == 'higher':
         if(durationOne >= durationTwo):
             counter += 1
-            new_current_right_image = random_image
-            image_files.remove(new_current_right_image)
-            new_random_image = random.choice(image_files)
+            image_files.remove(current_right_image)
+            random_image = random.choice(image_files)
     elif choice == 'lower':
         if(durationOne <= durationTwo):
             counter += 1
-            new_random_image = random_image
-            image_files.remove(new_random_image)
-            new_current_right_image = random.choice(image_files)
+            image_files.remove(random_image)
+            current_right_image = random.choice(image_files)
     else:
-        new_current_right_image = current_right_image
-        new_random_image = random_image
+        print("test")
 
-    return render_template('releasedate.html', current_right_image=new_current_right_image, random_image=new_random_image, movie=movie)
+    return render_template('releasedate.html', current_right_image=current_right_image, random_image=random_image)
 
 @app.route('/releasedate')
 def releasedate():
