@@ -3,13 +3,13 @@
 
 <div class="containerGame">
     <h1>Higher Lower - Released Date Version</h1>
-    <div class="game-container">
-        <img id="left-image" src="{{ url_for('static', filename='covers/' + random_image) }}">
+    <div class="game-container col-5">
+        <img id="left-image" src="{{ url_for('static', filename='covers/' + current_left_image) }}">
         <span class="vs-text">vs.</span>
         <img id="right-image" src="{{ url_for('static', filename='covers/' + current_right_image) }}">
     </div>
-    <div class="button-container">
-        <form method="POST" action="{{ url_for('compare_images', current_right_image=current_right_image, random_image=random_image) }}">
+    <div class="button-container col-5">
+        <form method="POST" action="{{ url_for('compare_images', current_right_image=current_right_image, current_left_image=current_left_image) }}">
             <button type="submit" name="choice" value="higher">Higher</button>
             <button type="submit" name="choice" value="lower">Lower</button>
         </form>

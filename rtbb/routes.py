@@ -95,36 +95,34 @@ def forgotPassword():
 def compare_images():    
     choice = request.form.get('choice')
     current_right_image = request.args.get('current_right_image')
-    random_image = request.args.get('random_image')
+    current_left_image = request.args.get('current_left_image')
     image_files = os.listdir(image_folder)
 
-    RightImage = Movies.query.filter_by(photoname = current_right_image).first_or_404()
-    LeftImage = Movies.query.filter_by(photoname = random_image).first_or_404()
+    right_image = Movies.query.filter_by(photoname = current_right_image).first_or_404()
+    left_image = Movies.query.filter_by(photoname = current_left_image).first_or_404()
 
-    durationOne = RightImage.duration
-    durationTwo = LeftImage.duration    
-
-
+    durationOne = right_image.duration
+    durationTwo = left_image.duration    
 
     counter = 0
     if choice == 'higher':
         if(durationOne <= durationTwo):
             counter += 1
-            image_files.remove(current_right_image)
-            random_image = random.choice(image_files)
+            image_files.remove(current_left_image)
+            current_left_image = current_right_image
+            current_right_image = random.choice(image_files)
         else:
           return render_template('verloren.html')
     elif choice == 'lower':
         if(durationOne >= durationTwo):
             counter += 1
-            image_files.remove(random_image)
+            image_files.remove(current_left_image)
+            current_left_image = current_right_image
             current_right_image = random.choice(image_files)
         else:
             return render_template('verloren.html')
-    else:
-        print("test")
 
-    return render_template('releasedate.html', current_right_image=current_right_image, random_image=random_image)
+    return render_template('releasedate.html', current_right_image=current_right_image, current_left_image=current_left_image)
 
 @app.route('/releasedate')
 def releasedate():
@@ -133,14 +131,14 @@ def releasedate():
     
     if image_files:
         current_right_image = random.choice(image_files)
-        image_files.remove(current_right_image)
-        random_image = random.choice(image_files)
+        current_left_image = random.choice(image_files)
+        image_files.remove(current_left_image)
     else:
         current_right_image = None
-        random_image = None
+        current_left_image = None
 
 
-    return render_template('releasedate.html', current_right_image=current_right_image, random_image=random_image)
+    return render_template('releasedate.html', current_right_image=current_right_image, current_left_image=current_left_image)
 
 @app.route('/runtime')
 def runtime():

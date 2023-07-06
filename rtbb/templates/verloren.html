@@ -1,7 +1,13 @@
 {% extends "layout.html" %}
+{% block bodyClass %}
+    class="hide-scroll"
+{% endblock %}
 {% block content %}
 
-    <h1>Du hast VERLOREN</h1>
-    <h2>Du bist dumm</h2>
+    <div class="verloren">
+        <img src="{{ url_for ('static', filename = 'dead.gif') }}">
+        <a href="{{ url_for('releasedate') }}">Play Again?</a>
+    </div>
+    
 
 {% endblock %}
