@@ -103,18 +103,24 @@ def compare_images():
 
     durationOne = RightImage.duration
     durationTwo = LeftImage.duration    
-    
+
+
+
     counter = 0
     if choice == 'higher':
-        if(durationOne >= durationTwo):
+        if(durationOne <= durationTwo):
             counter += 1
             image_files.remove(current_right_image)
             random_image = random.choice(image_files)
+        else:
+          return render_template('verloren.html')
     elif choice == 'lower':
-        if(durationOne <= durationTwo):
+        if(durationOne >= durationTwo):
             counter += 1
             image_files.remove(random_image)
             current_right_image = random.choice(image_files)
+        else:
+            return render_template('verloren.html')
     else:
         print("test")
 
@@ -156,6 +162,11 @@ def home():
 @login_required
 def quellen():
     return render_template('quellen.html')
+
+@app.route('/verloren')
+@login_required
+def verloren():
+    return render_template('verloren.html')
 
 @app.route('/impressum')
 @login_required
